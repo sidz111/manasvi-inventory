@@ -1,0 +1,1 @@
+# manasvi-inventory
