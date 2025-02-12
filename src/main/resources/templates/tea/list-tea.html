@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Tea Management</title>
+</head>
+<body>
+    <h1>Tea Management</h1>
+    <a th:href="@{/tea/add}">Add New Tea</a>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Tea Date</th>
+             <th>Tea Type</th>
+            <th>Total Quantity</th>
+            <th>Actions</th>
+        </tr>
+        <tr th:each="tea : ${teaList}">
+            <td th:text="${tea.id}"></td>
+            <td th:text="${tea.date}"></td>
+            <td th:text="${tea.type}"></td>
+            <td th:text="${tea.totalTeaCups}"></td>
+            <td>
+                <a th:href="@{/tea/edit/{id}(id=${tea.id})}">Edit</a> |
+                <a th:href="@{/tea/delete/{id}(id=${tea.id})}">Delete</a>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

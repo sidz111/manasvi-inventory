@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add Tea</title>
+</head>
+<body>
+    <h1>Add Tea Item</h1>
+    <form th:action="@{/tea/save}" method="post" th:object="${tea}">
+        <label>Tea Date:</label>
+        <input type="date" th:field="*{date}" required><br>
+        
+         <label>Tea Type:</label>
+        <input type="text" th:field="*{type}" required><br>
+        
+        <label>Total Quantity:</label>
+        <input type="number" th:field="*{totalTeaCups}" required><br>
+        <button type="submit">Save</button>
+    </form>
+</body>
+</html>

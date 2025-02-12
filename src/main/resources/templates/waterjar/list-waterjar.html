@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Water Jar Management</title>
+</head>
+<body>
+    <h1>Water Jar Management</h1>
+    <a th:href="@{/waterjar/add}">Add New Water Jar</a>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Owner</th>
+            <th>Total Jars</th>
+            <th>Date</th>
+            <th>Actions</th>
+        </tr>
+        <tr th:each="jar : ${waterJars}">
+            <td th:text="${jar.id}"></td>
+            <td th:text="${jar.jarOwner}"></td>
+            <td th:text="${jar.totalJars}"></td>
+            <td th:text="${jar.date}"></td>
+            <td>
+                <a th:href="@{/waterjar/edit/{id}(id=${jar.id})}">Edit</a> |
+                <a th:href="@{/waterjar/delete/{id}(id=${jar.id})}">Delete</a>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
