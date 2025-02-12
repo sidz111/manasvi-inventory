@@ -23,7 +23,7 @@
 		
 	    @GetMapping("/")
 	    public String home(Model model) {
-			model.addAttribute("totalStocks", stockItemService.getAllStockItems().size());
+			model.addAttribute("totalStocks", stockItemService.getAllStockItems());
 	    	model.addAttribute("totalTeas", teaService.getAllTeaRecords().size());
 	    	model.addAttribute("totalWaterJars", waterJarService.getAllWaterJars().size());
 	        return "index";

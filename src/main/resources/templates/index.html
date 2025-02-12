@@ -1,36 +1,3 @@
-<!-- <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <title>Home - Inventory Management</title>
-    <link rel="stylesheet" th:href="@{/css/style.css}">
-</head>
-<body>
-    <h1>Welcome to Inventory Management System</h1>
-    <nav>
-        <a th:href="@{/stock}">Manage Stock Items</a> |
-        <a th:href="@{/tea}">Manage Tea</a> |
-        <a th:href="@{/waterjar}">Manage Water Jars</a>
-    </nav>
-</body>
-</html> -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
   <head>
@@ -41,7 +8,7 @@
     <meta content="" name="description" />
 
     <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon" />
+    <link href="images/Manasvi.png" rel="icon" />
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -118,7 +85,7 @@
             </div>
           </div>
           <div class="navbar-nav w-100">
-            <a href="index.html" class="nav-item nav-link active"
+            <a href="/" class="nav-item nav-link active"
               ><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a
             >
             <div class="nav-item dropdown">
@@ -126,27 +93,44 @@
                 href="#"
                 class="nav-link dropdown-toggle"
                 data-bs-toggle="dropdown"
-                ><i class="fa fa-laptop me-2"></i>Elements</a
+                ><i class="fa fa-laptop me-2"></i>Stocks</a
               >
               <div class="dropdown-menu bg-transparent border-0">
-                <a href="button.html" class="dropdown-item">Buttons</a>
-                <a href="typography.html" class="dropdown-item">Typography</a>
-                <a href="element.html" class="dropdown-item">Other Elements</a>
+                <a href="/stock/add" class="dropdown-item">Add Stocks</a>
+                <a href="/" class="dropdown-item">List of Stocks</a>
               </div>
             </div>
-            <a href="widget.html" class="nav-item nav-link"
-              ><i class="fa fa-th me-2"></i>Widgets</a
-            >
-            <a href="form.html" class="nav-item nav-link"
-              ><i class="fa fa-keyboard me-2"></i>Forms</a
-            >
-            <a href="table.html" class="nav-item nav-link"
-              ><i class="fa fa-table me-2"></i>Tables</a
-            >
-            <a href="chart.html" class="nav-item nav-link"
-              ><i class="fa fa-chart-bar me-2"></i>Charts</a
-            >
-          </div>
+            
+            
+            
+            <div class="nav-item dropdown">
+              <a
+                href="#"
+                class="nav-link dropdown-toggle"
+                data-bs-toggle="dropdown"
+                ><i class="fa fa-laptop me-2"></i>Tea Secotion</a
+              >
+              <div class="dropdown-menu bg-transparent border-0">
+                <a href="button.html" class="dropdown-item">Add Todays Tea's</a>
+                <a href="typography.html" class="dropdown-item">Total Teas</a>
+              </div>
+            </div>
+            
+            
+            
+            
+            <div class="nav-item dropdown">
+              <a
+                href="#"
+                class="nav-link dropdown-toggle"
+                data-bs-toggle="dropdown"
+                ><i class="fa fa-laptop me-2"></i>Jars Section</a
+              >
+              <div class="dropdown-menu bg-transparent border-0">
+                <a href="button.html" class="dropdown-item">Add Todays Jars</a>
+                <a href="typography.html" class="dropdown-item">Total Jars</a>
+              </div>
+            </div>
         </nav>
       </div>
       <!-- Sidebar End -->
@@ -301,7 +285,7 @@
                 <i class="fa fa-chart-line fa-3x text-primary"></i>
                 <div class="ms-3">
                   <p class="mb-2">Total Stocks</p>
-                  <h6 class="mb-0" th:text="${totalStocks}"></h6>
+                  <h6 class="mb-0" th:text="${totalStocks.size()}"></h6>
                 </div>
               </div>
             </div>
@@ -346,8 +330,8 @@
         <div class="container-fluid pt-4 px-4">
           <div class="bg-secondary text-center rounded p-4">
             <div class="d-flex align-items-center justify-content-between mb-4">
-              <h6 class="mb-0">Recent Salse</h6>
-              <a href="">Show All</a>
+              <h6 class="mb-0">Current Stocks</h6>
+             <!--  <a href="">Show All</a> -->
             </div>
             <div class="table-responsive">
               <table
@@ -355,71 +339,24 @@
               >
                 <thead>
                   <tr class="text-white">
-                    <th scope="col">
-                      <input class="form-check-input" type="checkbox" />
-                    </th>
-                    <th scope="col">Date</th>
-                    <th scope="col">Invoice</th>
-                    <th scope="col">Customer</th>
-                    <th scope="col">Amount</th>
-                    <th scope="col">Status</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Total Stock</th>
+                    <th scope="col">Added Date</th>
+                    <th scope="col">Update Date</th>
                     <th scope="col">Action</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td><input class="form-check-input" type="checkbox" /></td>
-                    <td>01 Jan 2045</td>
-                    <td>INV-0123</td>
-                    <td>Manasvi</td>
-                    <td>$123</td>
-                    <td>Paid</td>
+                  <tr th:each="s : ${totalStocks}">
+                   
+                    <td th:text="${s.name}"></td>
+                    <td th:text="${s.totalStocks}"></td>
+                    <td th:text="${s.addedDate}"></td>
+                    <td th:text="${s.updateDate}"></td>
+                    
                     <td>
-                      <a class="btn btn-sm btn-primary" href="">Detail</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><input class="form-check-input" type="checkbox" /></td>
-                    <td>01 Jan 2045</td>
-                    <td>INV-0123</td>
-                    <td></td>
-                    <td>$123</td>
-                    <td>Paid</td>
-                    <td>
-                      <a class="btn btn-sm btn-primary" href="">Detail</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><input class="form-check-input" type="checkbox" /></td>
-                    <td>01 Jan 2045</td>
-                    <td>INV-0123</td>
-                    <td></td>
-                    <td>$123</td>
-                    <td>Paid</td>
-                    <td>
-                      <a class="btn btn-sm btn-primary" href="">Detail</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><input class="form-check-input" type="checkbox" /></td>
-                    <td>01 Jan 2045</td>
-                    <td>INV-0123</td>
-                    <td></td>
-                    <td>$123</td>
-                    <td>Paid</td>
-                    <td>
-                      <a class="btn btn-sm btn-primary" href="">Detail</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><input class="form-check-input" type="checkbox" /></td>
-                    <td>01 Jan 2045</td>
-                    <td>INV-0123</td>
-                    <td></td>
-                    <td>$123</td>
-                    <td>Paid</td>
-                    <td>
-                      <a class="btn btn-sm btn-primary" href="">Detail</a>
+                      <a class="btn btn-sm btn-primary" href="">Update</a>
+                       <a class="btn btn-sm btn-primary" th:href="@{/stock/delete/{id}(id=${s.id})}">Delete</a>
                     </td>
                   </tr>
                 </tbody>

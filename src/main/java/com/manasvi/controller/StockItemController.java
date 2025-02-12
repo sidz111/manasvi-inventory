@@ -2,6 +2,9 @@ package com.manasvi.controller;
 
 import com.manasvi.entity.StockItem;
 import com.manasvi.service.StockItemService;
+import com.manasvi.service.TeaService;
+import com.manasvi.service.WaterJarService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,8 +17,14 @@ import java.util.Optional;
 @RequestMapping("/stock")
 public class StockItemController {
 
-    @Autowired
-    private StockItemService stockItemService;
+	@Autowired
+	StockItemService stockItemService;
+	
+	@Autowired
+	TeaService teaService;
+	
+	@Autowired
+	WaterJarService waterJarService;
 
     @GetMapping
     public String listStockItems(Model model) {
@@ -27,13 +36,16 @@ public class StockItemController {
     @GetMapping("/add")
     public String showAddForm(Model model) {
         model.addAttribute("stockItem", new StockItem());
+        model.addAttribute("totalStocks", stockItemService.getAllStockItems());
+    	model.addAttribute("totalTeas", teaService.getAllTeaRecords().size());
+    	model.addAttribute("totalWaterJars", waterJarService.getAllWaterJars().size());
         return "stock/add-stock";
     }
 
     @PostMapping("/save")
     public String saveStockItem(@ModelAttribute StockItem stockItem) {
         stockItemService.addStockItem(stockItem);
-        return "redirect:/stock";
+        return "redirect:/";
     }
 
     @GetMapping("/edit/{id}")
@@ -52,6 +64,6 @@ public class StockItemController {
     @GetMapping("/delete/{id}")
     public String deleteStockItem(@PathVariable Long id) {
         stockItemService.deleteStockItem(id);
-        return "redirect:/stock";
+        return "redirect:/";
     }
 }
