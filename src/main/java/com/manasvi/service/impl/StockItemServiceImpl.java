@@ -1,11 +1,15 @@
 package com.manasvi.service.impl;
 
+import com.manasvi.entity.StockHistory;
 import com.manasvi.entity.StockItem;
+import com.manasvi.repository.StockHistoryRepository;
 import com.manasvi.repository.StockItemRepository;
 import com.manasvi.service.StockItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -14,6 +18,9 @@ public class StockItemServiceImpl implements StockItemService {
 
     @Autowired
     private StockItemRepository stockItemRepository;
+    
+    @Autowired
+    private StockHistoryRepository stockHistoryRepository;
 
     @Override
     public StockItem addStockItem(StockItem stockItem) {
@@ -64,4 +71,32 @@ public class StockItemServiceImpl implements StockItemService {
     public List<StockItem> findStockItemsByUpdateDate(String updateDate) {
         return stockItemRepository.findByUpdateDate(updateDate);
     }
+
+    @Override
+    public void recordStockHistory(Long stockItemId, String action, Integer quantity, Integer oldCount, Integer currentCount, Integer removedItem) {
+        Optional<StockItem> stockItemOpt = stockItemRepository.findById(stockItemId);
+        if (stockItemOpt.isPresent()) {
+            StockItem stockItem = stockItemOpt.get();
+
+            StockHistory stockHistory = new StockHistory();
+            stockHistory.setStockItem(stockItem);
+            stockHistory.setAction(action);
+            stockHistory.setTimestamp(new Date().toString());
+            stockHistory.setOldCount(oldCount);
+            stockHistory.setCurrentCount(currentCount);
+            stockHistory.setRemovedItem(removedItem);
+            stockHistoryRepository.save(stockHistory);
+
+            // Ensure history list is not null and add new record
+            List<StockHistory> historyRecords = stockItem.getHistoryRecords();
+            if (historyRecords == null) {
+                historyRecords = new ArrayList<>();
+            }
+            historyRecords.add(stockHistory);
+            stockItem.setHistoryRecords(historyRecords);
+            
+            stockItemRepository.save(stockItem);
+        }
+    }
+
 }

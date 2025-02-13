@@ -364,6 +364,49 @@
             </div>
           </div>
         </div>
+        
+        
+        <form id="stockForm" method="get">
+    <!-- Select Item -->
+    <div class="mb-3">
+        <label for="stockItem" class="form-label">Select Stock Item:</label>
+        <select id="stockItem" name="stockItemId" class="form-control" required>
+            <option value="" disabled selected>Select an item</option>
+            <option th:each="item : ${totalStocks}" th:value="${item.id}" th:text="${item.name}"></option>
+        </select>
+    </div>
+
+    <!-- Input Count -->
+    <div class="mb-3">
+        <label for="count" class="form-label">Enter Quantity:</label>
+        <input type="number" id="count" name="count" class="form-control" min="1" required>
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" class="btn btn-primary">Use Stock</button>
+
+    <!-- Back Link -->
+    <a href="/" class="btn btn-secondary">Back to Stock List</a>
+</form>
+
+
+
+<script>
+    document.getElementById("stockForm").addEventListener("submit", function(event) {
+        var stockItemId = document.getElementById("stockItem").value;
+        var count = document.getElementById("count").value;
+        
+        if (!stockItemId || !count || count <= 0) {
+            alert("Please select a stock item and enter a valid quantity.");
+            event.preventDefault();
+            return;
+        }
+
+        // Set the form action dynamically
+        this.action = "/stock/use-stock/" + stockItemId + "/" + count;
+    });
+</script>
+        
         <!-- Recent Sales End -->
 
         <!-- Footer Start -->

@@ -65,14 +65,28 @@ public class StockItemController {
 
     @PostMapping("/update/{id}")
     public String updateStockItem(@PathVariable Long id, @ModelAttribute StockItem stockItem) {
-        stockItem.setId(id); // Ensure the ID is set on the StockItem object
+        stockItem.setId(id);
         stockItemService.updateStockItem(id, stockItem);
-        return "redirect:/"; // Redirect to the home page or stock list after update
+        return "redirect:/";
     }
 
     @GetMapping("/delete/{id}")
     public String deleteStockItem(@PathVariable Long id) {
         stockItemService.deleteStockItem(id);
-        return "redirect:/"; // Redirect back to the home page after deletion
+        return "redirect:/";
+    }
+    
+    @GetMapping("/use-stock/{id}/{count}")
+    public String useStocks(@PathVariable("id") Long id, @PathVariable("count") Integer no, Model model) {
+    	Optional<StockItem> stockItem = stockItemService.getStockItemById(id);
+    	if(stockItem.isEmpty()) {
+    		model.addAttribute("error", "Class not found");
+    		return "redirect:/";
+    	}else {
+    		stockItem.get().setTotalStocks(stockItem.get().getTotalStocks()-no);
+    		stockItemService.recordStockHistory(stockItem.get().getId(), "Used", no, stockItem.get().getTotalStocks()+no, stockItem.get().getTotalStocks(), no);
+    		stockItemService.addStockItem(stockItem.get());
+    		return "redirect:/";
+    	}
     }
 }

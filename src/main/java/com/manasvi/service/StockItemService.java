@@ -5,28 +5,23 @@ import java.util.List;
 import java.util.Optional;
 
 public interface StockItemService {
-    
-    // Add a new stock item
-    StockItem addStockItem(StockItem stockItem);
 
-    // Update an existing stock item
-    StockItem updateStockItem(Long id, StockItem stockItem);
+	StockItem addStockItem(StockItem stockItem);
 
-    // Delete a stock item by ID
-    void deleteStockItem(Long id);
+	StockItem updateStockItem(Long id, StockItem stockItem);
 
-    // Get a stock item by ID
-    Optional<StockItem> getStockItemById(Long id);
+	void deleteStockItem(Long id);
 
-    // Get all stock items
-    List<StockItem> getAllStockItems();
+	Optional<StockItem> getStockItemById(Long id);
 
-    // Find stock items by name
-    List<StockItem> findStockItemsByName(String name);
+	List<StockItem> getAllStockItems();
 
-    // Find stock items by added date
-    List<StockItem> findStockItemsByAddedDate(String addedDate);
+	List<StockItem> findStockItemsByName(String name);
 
-    // Find stock items by update date
-    List<StockItem> findStockItemsByUpdateDate(String updateDate);
+	List<StockItem> findStockItemsByAddedDate(String addedDate);
+
+	List<StockItem> findStockItemsByUpdateDate(String updateDate);
+
+	void recordStockHistory(Long stockItemId, String action, Integer quantity, Integer oldCount, Integer currentCount, Integer removedItem); // Store stock change history
+
 }
