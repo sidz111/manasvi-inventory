@@ -141,7 +141,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background: var(--dark);
+    background: white;
     border-radius: 40px;
 }
 
@@ -173,7 +173,7 @@
 
 .sidebar .navbar .dropdown-item:hover,
 .sidebar .navbar .dropdown-item.active {
-    background: var(--dark);
+    background: white;
 }
 
 .content .navbar .navbar-nav .nav-link {
@@ -195,7 +195,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background: var(--dark);
+    background: white;
     border-radius: 40px;
 }
 
@@ -254,36 +254,4 @@
 
 .bootstrap-datetimepicker-widget table td.today::before {
     border-bottom-color: var(--primary);
-}
-
-
-/*** Testimonial ***/
-.progress .progress-bar {
-    width: 0px;
-    transition: 2s;
-}
-
-
-/*** Testimonial ***/
-.testimonial-carousel .owl-dots {
-    margin-top: 24px;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-}
-
-.testimonial-carousel .owl-dot {
-    position: relative;
-    display: inline-block;
-    margin: 0 5px;
-    width: 15px;
-    height: 15px;
-    border: 5px solid var(--primary);
-    border-radius: 15px;
-    transition: .5s;
-}
-
-.testimonial-carousel .owl-dot.active {
-    background: var(--dark);
-    border-color: var(--primary);
 }

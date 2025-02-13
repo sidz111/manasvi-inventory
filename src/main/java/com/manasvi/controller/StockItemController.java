@@ -17,14 +17,14 @@ import java.util.Optional;
 @RequestMapping("/stock")
 public class StockItemController {
 
-	@Autowired
-	StockItemService stockItemService;
-	
-	@Autowired
-	TeaService teaService;
-	
-	@Autowired
-	WaterJarService waterJarService;
+    @Autowired
+    private StockItemService stockItemService;
+
+    @Autowired
+    private TeaService teaService;
+
+    @Autowired
+    private WaterJarService waterJarService;
 
     @GetMapping
     public String listStockItems(Model model) {
@@ -37,8 +37,8 @@ public class StockItemController {
     public String showAddForm(Model model) {
         model.addAttribute("stockItem", new StockItem());
         model.addAttribute("totalStocks", stockItemService.getAllStockItems());
-    	model.addAttribute("totalTeas", teaService.getAllTeaRecords().size());
-    	model.addAttribute("totalWaterJars", waterJarService.getAllWaterJars().size());
+        model.addAttribute("totalTeas", teaService.getAllTeaRecords().size());
+        model.addAttribute("totalWaterJars", waterJarService.getAllWaterJars().size());
         return "stock/add-stock";
     }
 
@@ -50,20 +50,29 @@ public class StockItemController {
 
     @GetMapping("/edit/{id}")
     public String showEditForm(@PathVariable Long id, Model model) {
-        Optional<StockItem> stockItem = stockItemService.getStockItemById(id);
-        model.addAttribute("stockItem", stockItem);
+        Optional<StockItem> stockItemOptional = stockItemService.getStockItemById(id);
+        if (stockItemOptional.isPresent()) {
+            model.addAttribute("stockItem", stockItemOptional.get()); // Pass the StockItem, not Optional
+        } else {
+            // Handle case where StockItem is not found
+            return "redirect:/stock"; // Or show an error page
+        }
+        model.addAttribute("totalStocks", stockItemService.getAllStockItems());
+    	model.addAttribute("totalTeas", teaService.getAllTeaRecords().size());
+    	model.addAttribute("totalWaterJars", waterJarService.getAllWaterJars().size());
         return "stock/edit-stock";
     }
 
     @PostMapping("/update/{id}")
     public String updateStockItem(@PathVariable Long id, @ModelAttribute StockItem stockItem) {
+        stockItem.setId(id); // Ensure the ID is set on the StockItem object
         stockItemService.updateStockItem(id, stockItem);
-        return "redirect:/stock";
+        return "redirect:/"; // Redirect to the home page or stock list after update
     }
 
     @GetMapping("/delete/{id}")
     public String deleteStockItem(@PathVariable Long id) {
         stockItemService.deleteStockItem(id);
-        return "redirect:/";
+        return "redirect:/"; // Redirect back to the home page after deletion
     }
 }
