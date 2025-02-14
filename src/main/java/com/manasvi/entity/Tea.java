@@ -16,6 +16,16 @@ public class Tea {
     private String type; //Tea or Coffee
 
     private Integer totalTeaCups;
+    
+    private String ship;
+
+	public String getShip() {
+		return ship;
+	}
+
+	public void setShip(String ship) {
+		this.ship = ship;
+	}
 
 	public Long getId() {
 		return id;
