@@ -1,17 +1,23 @@
 package com.manasvi.controller;
 
-import com.manasvi.entity.StockItem;
-import com.manasvi.service.StockItemService;
-import com.manasvi.service.TeaService;
-import com.manasvi.service.WaterJarService;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
-import java.util.List;
-import java.util.Optional;
+import com.manasvi.entity.StockItem;
+import com.manasvi.service.StockItemService;
+import com.manasvi.service.TeaService;
+import com.manasvi.service.WaterJarService;
 
 @Controller
 @RequestMapping("/stock")
@@ -84,6 +90,7 @@ public class StockItemController {
     		return "redirect:/";
     	}else {
     		stockItem.get().setTotalStocks(stockItem.get().getTotalStocks()-no);
+    		stockItem.get().setUpdateDate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
     		stockItemService.recordStockHistory(stockItem.get().getId(), "Used", no, stockItem.get().getTotalStocks()+no, stockItem.get().getTotalStocks(), no);
     		stockItemService.addStockItem(stockItem.get());
     		return "redirect:/";
