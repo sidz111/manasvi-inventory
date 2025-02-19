@@ -1,6 +1,9 @@
 package com.manasvi.controller;
 
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
@@ -15,6 +18,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.manasvi.entity.StockItem;
+import com.manasvi.entity.Tea;
 import com.manasvi.service.StockItemService;
 import com.manasvi.service.TeaService;
 import com.manasvi.service.WaterJarService;
@@ -45,6 +49,18 @@ public class StockItemController {
         model.addAttribute("totalStocks", stockItemService.getAllStockItems());
         model.addAttribute("totalTeas", teaService.getAllTeaRecords().size());
         model.addAttribute("totalWaterJars", waterJarService.getAllWaterJars().size());
+        List<Tea> allTeas = teaService.getAllTeaRecords();
+
+		int morningTeasTotal = allTeas.stream().filter(
+				tea -> "Morning".equalsIgnoreCase(tea.getShip()) && extractDate(tea.getDate()).equals(LocalDate.now()))
+				.mapToInt(Tea::getTotalTeaCups).sum();
+
+		int eveningTeasTotal = allTeas.stream().filter(
+				tea -> "Evening".equalsIgnoreCase(tea.getShip()) && extractDate(tea.getDate()).equals(LocalDate.now()))
+				.mapToInt(Tea::getTotalTeaCups).sum();
+
+		model.addAttribute("morningTeasTotal", morningTeasTotal);
+		model.addAttribute("eveningTeasTotal", eveningTeasTotal);
         return "stock/add-stock";
     }
 
@@ -66,6 +82,19 @@ public class StockItemController {
         model.addAttribute("totalStocks", stockItemService.getAllStockItems());
     	model.addAttribute("totalTeas", teaService.getAllTeaRecords().size());
     	model.addAttribute("totalWaterJars", waterJarService.getAllWaterJars().size());
+    	
+    	List<Tea> allTeas = teaService.getAllTeaRecords();
+
+		int morningTeasTotal = allTeas.stream().filter(
+				tea -> "Morning".equalsIgnoreCase(tea.getShip()) && extractDate(tea.getDate()).equals(LocalDate.now()))
+				.mapToInt(Tea::getTotalTeaCups).sum();
+
+		int eveningTeasTotal = allTeas.stream().filter(
+				tea -> "Evening".equalsIgnoreCase(tea.getShip()) && extractDate(tea.getDate()).equals(LocalDate.now()))
+				.mapToInt(Tea::getTotalTeaCups).sum();
+
+		model.addAttribute("morningTeasTotal", morningTeasTotal);
+		model.addAttribute("eveningTeasTotal", eveningTeasTotal);
         return "stock/edit-stock";
     }
 
@@ -95,5 +124,10 @@ public class StockItemController {
     		stockItemService.addStockItem(stockItem.get());
     		return "redirect:/";
     	}
+    }
+    private LocalDate extractDate(String dateTimeString) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        LocalDateTime dateTime = LocalDateTime.parse(dateTimeString, formatter);
+        return dateTime.toLocalDate();
     }
 }

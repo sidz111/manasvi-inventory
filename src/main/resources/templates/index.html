@@ -140,8 +140,7 @@
 									class="d-flex align-items-center me-4">
 									<!-- Increased margin-right -->
 									<strong th:if="${stock.totalStocks} < 10"
-										th:text="${stock.name}"></strong> <small
-										class="ms-2"
+										th:text="${stock.name}"></strong> <small class="ms-2"
 										th:if="${stock.totalStocks} < 10"
 										th:text="${stock.totalStocks}"></small>
 								</div>
@@ -160,7 +159,7 @@
 						<div
 							class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
 							<a href="#" class="dropdown-item">My Profile</a> <a href="#"
-								class="dropdown-item">Settings</a> <a href="#"
+								class="dropdown-item">Settings</a> <a href="/logout"
 								class="dropdown-item">Log Out</a>
 						</div>
 					</div>
