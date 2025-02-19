@@ -40,7 +40,7 @@
 
 <body>
 	<div class="container-fluid position-relative d-flex p-0">
-		
+
 		<div id="spinner"
 			class="show bg-dark position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
 			<div class="spinner-border text-primary"
@@ -72,11 +72,10 @@
 						class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
 					<div class="nav-item dropdown">
 						<a href="#" class="nav-link dropdown-toggle"
-							data-bs-toggle="dropdown"><i
-							class="fa fa-laptop me-2"></i>Stocks</a>
+							data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Stocks</a>
 						<div class="dropdown-menu bg-transparent border-0">
-							<a href="/stock/add" class="dropdown-item">Add Stocks</a>
-							<a href="/" class="dropdown-item">List of Stocks</a> 
+							<a href="/stock/add" class="dropdown-item">Add Stocks</a> <a
+								href="/" class="dropdown-item">List of Stocks</a>
 						</div>
 					</div>
 
@@ -84,8 +83,8 @@
 
 					<div class="nav-item dropdown">
 						<a href="#" class="nav-link dropdown-toggle"
-							data-bs-toggle="dropdown"><i
-							class="fa fa-laptop me-2"></i>Tea Secotion</a>
+							data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Tea
+							Secotion</a>
 						<div class="dropdown-menu bg-transparent border-0">
 							<a href="/tea" class="dropdown-item">About Tea's</a>
 						</div>
@@ -96,11 +95,20 @@
 
 					<div class="nav-item dropdown">
 						<a href="#" class="nav-link dropdown-toggle"
-							data-bs-toggle="dropdown"><i
-							class="fa fa-laptop me-2"></i>Jars Section</a>
+							data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Jars
+							Section</a>
 						<div class="dropdown-menu bg-transparent border-0">
 							<a href="button.html" class="dropdown-item">Add Todays Jars</a> <a
 								href="typography.html" class="dropdown-item">Total Jars</a>
+						</div>
+					</div>
+
+					<div class="nav-item dropdown">
+						<a href="#" class="nav-link dropdown-toggle"
+							data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Flower
+							Secotion</a>
+						<div class="dropdown-menu bg-transparent border-0">
+							<a href="/flower/list" class="dropdown-item">About Flower's</a>
 						</div>
 					</div>
 			</nav>
@@ -220,37 +228,38 @@
 						<div class="bg-secondary rounded h-100 p-4">
 							<h6 class="mb-4">Basic Form</h6>
 							<form th:action="@{/stock/update/{id}(id=${stockItem.id})}"
-		method="post" th:object="${stockItem}">
+								method="post" th:object="${stockItem}">
 
-		<input type="hidden" th:field="*{id}">
+								<input type="hidden" th:field="*{id}">
 
-		<div class="mb-3">
-			<label for="name" class="form-label">Name of Stock</label> <input
-				type="text" class="form-control" id="name" th:field="*{name}"
-				required />
-		</div>
+								<div class="mb-3">
+									<label for="name" class="form-label">Name of Stock</label> <input
+										type="text" class="form-control" id="name" th:field="*{name}"
+										required />
+								</div>
 
-		<div class="mb-3">
-			<label for="totalStocks" class="form-label">Total Tocks</label> <input
-				type="number" class="form-control" id="totalStocks"
-				th:field="*{totalStocks}" required />
-		</div>
+								<div class="mb-3">
+									<label for="totalStocks" class="form-label">Total Tocks</label>
+									<input type="number" class="form-control" id="totalStocks"
+										th:field="*{totalStocks}" required />
+								</div>
 
-		<div class="mb-3">
-			<label for="addedDate" class="form-label">Added Date</label> <input
-				type="date" class="form-control" id="addedDate"
-				th:field="*{addedDate}" required />
-		</div>
+								<div class="mb-3">
+									<label for="addedDate" class="form-label">Added Date</label> <input
+										type="date" class="form-control" id="addedDate"
+										th:field="*{addedDate}" required />
+								</div>
 
 
-		<div class="mb-3">
-			<label for="addedDate" class="form-label">Updated Date</label> <input
-				type="date" class="form-control" id="updateDate"
-				th:field="*{updateDate}" required />
-		</div>
+								<div class="mb-3">
+									<label for="addedDate" class="form-label">Updated Date</label>
+									<input type="date" class="form-control" id="updateDate"
+										th:field="*{updateDate}" required />
+								</div>
 
-		<button type="submit" class="btn btn-primary">Update Stock</button>
-	</form>
+								<button type="submit" class="btn btn-primary">Update
+									Stock</button>
+							</form>
 						</div>
 					</div>
 				</div>
@@ -266,18 +275,18 @@
 							All Right Reserved.
 						</div>
 						<div class="col-12 col-sm-6 text-center text-sm-end">
-						
+
 							Designed By <a href="https://manasvi.tech/">Manasvi Tech</a>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		
+
 		<a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i
 			class="bi bi-arrow-up"></i></a>
 	</div>
-	
+
 	<script>
 	  const formatDate = (date) => {
     const year = date.getFullYear();
@@ -291,8 +300,8 @@ const currentDate = new Date();
  document.querySelector("#currentDate").innerHTML=formatDate(currentDate);
     
 	</script>
-	
-	
+
+
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
