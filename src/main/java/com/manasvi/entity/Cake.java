@@ -6,15 +6,17 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
-public class Flower {
-
+public class Cake {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-
+	
 	private String date;
-
-	private Byte count;
+	
+	private Integer count;
+	
+	private String forWho;
 
 	public Long getId() {
 		return id;
@@ -32,11 +34,20 @@ public class Flower {
 		this.date = date;
 	}
 
-	public Byte getCount() {
+	public Integer getCount() {
 		return count;
 	}
 
-	public void setCount(Byte count) {
+	public void setCount(Integer count) {
 		this.count = count;
 	}
+
+	public String getForWho() {
+		return forWho;
+	}
+
+	public void setForWho(String forWho) {
+		this.forWho = forWho;
+	}
+
 }
