@@ -35,7 +35,6 @@ public class Flower {
 	public Byte getCount() {
 		return count;
 	}
-
 	public void setCount(Byte count) {
 		this.count = count;
 	}
