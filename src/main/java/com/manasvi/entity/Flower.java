@@ -31,7 +31,6 @@ public class Flower {
 	public void setDate(String date) {
 		this.date = date;
 	}
-
 	public Byte getCount() {
 		return count;
 	}
