@@ -303,12 +303,14 @@
 
 					<!-- Tea Statistics Section (Right Side) -->
 					<div class="col-sm-12 col-xl-6">
-						<div class="bg-secondary text-center rounded p-4">
+						<div class="bg-secondary text-center rounded p-4"
+							style="height: 400px; overflow: hidden;">
 							<div
 								class="d-flex align-items-center justify-content-between mb-4">
 								<h6 class="mb-0">Tea Statistics</h6>
 							</div>
-							<div class="table-responsive">
+							<div class="table-responsive"
+								style="max-height: 320px; overflow-y: auto;">
 								<table
 									class="table text-start align-middle table-bordered table-hover mb-0">
 									<thead>
@@ -365,39 +367,38 @@
 
 
 			<div class="container-fluid pt-4 px-4">
-				<div class="bg-secondary text-center rounded p-4">
-					<div class="d-flex align-items-center justify-content-between mb-4">
-						<h6 class="mb-0">Current Stocks</h6>
-						<!--  <a href="">Show All</a> -->
-					</div>
-					<div class="table-responsive">
-						<table
-							class="table text-start align-middle table-bordered table-hover mb-0">
-							<thead>
-								<tr class="text-white">
-									<th scope="col">Name</th>
-									<th scope="col">Action</th>
-									<th scope="col">Updated Date</th>
-									<th scope="col">Old Stocks</th>
-									<th scope="col">Current Stocks</th>
-									<th scope="col">Issued Stocks</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr th:each="s : ${allStockHistories}">
+    <div class="bg-secondary text-center rounded p-4" style="height: 450px; overflow: hidden;">
+        <div class="d-flex align-items-center justify-content-between mb-4">
+            <h6 class="mb-0">Current Stocks</h6>
+            <!--  <a href="">Show All</a> -->
+        </div>
+        <div class="table-responsive" style="max-height: 380px; overflow-y: auto;">
+            <table class="table text-start align-middle table-bordered table-hover mb-0">
+                <thead>
+                    <tr class="text-white">
+                        <th scope="col">Name</th>
+                        <th scope="col">Action</th>
+                        <th scope="col">Updated Date</th>
+                        <th scope="col">Old Stocks</th>
+                        <th scope="col">Current Stocks</th>
+                        <th scope="col">Issued Stocks</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="s : ${allStockHistories}">
+                        <td th:text="${s.stockItem.name}"></td>
+                        <td th:text="${s.action}"></td>
+                        <td th:text="${s.timestamp}"></td>
+                        <td th:text="${s.oldCount}"></td>
+                        <td th:text="${s.currentCount}"></td>
+                        <td th:text="${s.removedItem}"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
 
-									<td th:text="${s.stockItem.name}"></td>
-									<td th:text="${s.action}"></td>
-									<td th:text="${s.timestamp}"></td>
-									<td th:text="${s.oldCount}"></td>
-									<td th:text="${s.currentCount}"></td>
-									<td th:text="${s.removedItem}"></td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-				</div>
-			</div>
 
 
 
