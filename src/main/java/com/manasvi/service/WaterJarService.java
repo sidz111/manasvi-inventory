@@ -8,7 +8,7 @@ public interface WaterJarService {
 
     WaterJar addWaterJar(WaterJar waterJar);
     
-    WaterJar updateWaterJar(Long id, WaterJar updatedWaterJar);
+    WaterJar updateWaterJar(Long id, WaterJar waterJar);
     
     void deleteWaterJar(Long id);
     

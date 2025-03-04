@@ -30,13 +30,14 @@ public class FlowerServiceImpl implements FlowerService {
 		if (f.isEmpty()) {
 			return null;
 		} else {
+			flowerRepository.save(f.get());
 			return f.get();
 		}
 	}
 
 	@Override
 	public void deleteFlowerById(Long id) {
-		flowerRepository.deleteById(id);
+		this.flowerRepository.deleteById(id);
 	}
 
 	@Override

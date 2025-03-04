@@ -17,7 +17,7 @@ public class WaterJarServiceImpl implements WaterJarService {
 
     @Override
     public WaterJar addWaterJar(WaterJar waterJar) {
-        return waterJarRepository.save(waterJar);
+        return this.waterJarRepository.save(waterJar);
     }
 
     @Override
@@ -36,26 +36,26 @@ public class WaterJarServiceImpl implements WaterJarService {
 
     @Override
     public void deleteWaterJar(Long id) {
-        waterJarRepository.deleteById(id);
+        this.waterJarRepository.deleteById(id);
     }
 
     @Override
     public Optional<WaterJar> getWaterJarById(Long id) {
-        return waterJarRepository.findById(id);
+        return this.waterJarRepository.findById(id);
     }
 
     @Override
     public List<WaterJar> getAllWaterJars() {
-        return waterJarRepository.findAll();
+        return this.waterJarRepository.findAll();
     }
 
     @Override
     public List<WaterJar> findByJarOwner(String jarOwner) {
-        return waterJarRepository.findByJarOwner(jarOwner);
+        return this.waterJarRepository.findByJarOwner(jarOwner);
     }
 
     @Override
     public List<WaterJar> findByDate(String date) {
-        return waterJarRepository.findByDate(date);
+        return this.waterJarRepository.findByDate(date);
     }
 }

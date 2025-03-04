@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.manasvi.entity.StockItem;
 import com.manasvi.entity.Tea;
+import com.manasvi.service.StockHistoryService;
 import com.manasvi.service.StockItemService;
 import com.manasvi.service.TeaService;
 import com.manasvi.service.WaterJarService;
@@ -35,11 +36,28 @@ public class StockItemController {
 
     @Autowired
     private WaterJarService waterJarService;
+    
+    @Autowired
+	StockHistoryService stockHistoryService;
 
-    @GetMapping
+    @GetMapping("/list")
     public String listStockItems(Model model) {
-        List<StockItem> stockItems = stockItemService.getAllStockItems();
-        model.addAttribute("stockItems", stockItems);
+    	model.addAttribute("totalStocks", stockItemService.getAllStockItems());
+		model.addAttribute("totalTeas", teaService.getAllTeaRecords().size());
+		model.addAttribute("totalWaterJars", waterJarService.getAllWaterJars().size());
+		model.addAttribute("allStockHistories", stockHistoryService.getAllStockHistories());
+		List<Tea> allTeas = teaService.getAllTeaRecords();
+
+		int morningTeasTotal = allTeas.stream().filter(
+				tea -> "Morning".equalsIgnoreCase(tea.getShip()) && extractDate(tea.getDate()).equals(LocalDate.now()))
+				.mapToInt(Tea::getTotalTeaCups).sum();
+
+		int eveningTeasTotal = allTeas.stream().filter(
+				tea -> "Evening".equalsIgnoreCase(tea.getShip()) && extractDate(tea.getDate()).equals(LocalDate.now()))
+				.mapToInt(Tea::getTotalTeaCups).sum();
+
+		model.addAttribute("morningTeasTotal", morningTeasTotal);
+		model.addAttribute("eveningTeasTotal", eveningTeasTotal);
         return "stock/list-stock";
     }
 

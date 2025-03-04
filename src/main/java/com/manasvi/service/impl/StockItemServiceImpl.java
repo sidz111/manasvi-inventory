@@ -24,7 +24,7 @@ public class StockItemServiceImpl implements StockItemService {
 
     @Override
     public StockItem addStockItem(StockItem stockItem) {
-        return stockItemRepository.save(stockItem);
+        return this.stockItemRepository.save(stockItem);
     }
 
     @Override
