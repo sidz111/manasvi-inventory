@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.manasvi.entity.Tea;
+import com.manasvi.service.FlowerService;
 import com.manasvi.service.StockHistoryService;
 import com.manasvi.service.StockItemService;
 import com.manasvi.service.TeaService;
@@ -32,6 +33,9 @@ public class FlowerController {
 
 	@Autowired
 	StockHistoryService stockHistoryService;
+	
+	@Autowired
+	FlowerService flowerService;
 
 	@GetMapping("/list")
 	public String getFlowerPage(Model model) {
@@ -51,6 +55,7 @@ public class FlowerController {
 
 		model.addAttribute("morningTeasTotal", morningTeasTotal);
 		model.addAttribute("eveningTeasTotal", eveningTeasTotal);
+		model.addAttribute("flowers", flowerService.getAllFlowers());
 		return "flower/flower-list";
 	}
 	

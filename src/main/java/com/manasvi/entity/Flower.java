@@ -14,7 +14,7 @@ public class Flower {
 
 	private String date;
 
-	private Byte count;
+	private Integer count;
 
 	public Long getId() {
 		return id;
@@ -32,11 +32,11 @@ public class Flower {
 		this.date = date;
 	}
 
-	public Byte getCount() {
+	public Integer getCount() {
 		return count;
 	}
 
-	public void setCount(Byte count) {
+	public void setCount(Integer count) {
 		this.count = count;
 	}
 }
