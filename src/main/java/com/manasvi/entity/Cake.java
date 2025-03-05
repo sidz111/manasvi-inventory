@@ -17,6 +17,8 @@ public class Cake {
 	private Integer count;
 	
 	private String forWho;
+	
+	private Float price;
 
 	public Long getId() {
 		return id;
@@ -50,4 +52,11 @@ public class Cake {
 		this.forWho = forWho;
 	}
 
+	public Float getPrice() {
+		return price;
+	}
+
+	public void setPrice(Float price) {
+		this.price = price;
+	}
 }
