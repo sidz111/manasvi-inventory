@@ -92,7 +92,7 @@
 							<a href="/tea" class="dropdown-item">About Tea's</a>
 						</div>
 					</div>
-					
+
 					<div class="nav-item dropdown">
 						<a href="#" class="nav-link dropdown-toggle"
 							data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Jars
@@ -102,7 +102,7 @@
 								href="typography.html" class="dropdown-item">Total Jars</a>
 						</div>
 					</div>
-					
+
 					<div class="nav-item dropdown">
 						<a href="#" class="nav-link dropdown-toggle"
 							data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Flower
@@ -228,12 +228,68 @@
 			</div> -->
 			<!-- Sale & Revenue End -->
 
-			<!-- Recent Sales Start -->
+
 			<div class="container-fluid pt-4 px-4">
+				<div class="row g-4">
+					<!-- Form Section (Left Side) -->
+					<div class="col-sm-12 col-xl-6">
+						<div class="bg-secondary rounded h-100 p-4">
+							<h6 class="mb-4 text-center">Today's Flowers</h6>
+							<form th:action="@{/flower/add}" method="post"
+								th:object="${flower}">
+								<div class="mb-3">
+									<label for="count" class="form-label">Count</label> <input
+										type="number" class="form-control" id="count"
+										th:field="*{count}" required />
+								</div>
+								<div class="d-flex justify-content-center">
+									<button type="submit" class="btn btn-primary">Add</button>
+								</div>
+							</form>
+						</div>
+					</div>
+
+					<!-- Tea Statistics Section (Right Side) -->
+					<div class="col-sm-12 col-xl-6">
+						<div class="bg-secondary text-center rounded p-4"
+							style="height: 400px; overflow: hidden;">
+							<div
+								class="d-flex align-items-center justify-content-between mb-4">
+								<h6 class="mb-0">Flower Statistics</h6>
+							</div>
+							<div class="table-responsive"
+								style="max-height: 320px; overflow-y: auto;">
+								<table
+									class="table text-start align-middle table-bordered table-hover mb-0">
+									<thead>
+										<tr class="text-white">
+											<th scope="col">ID</th>
+											<th scope="col">Date</th>
+											<th scope="col">Count</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr th:each="f : ${flowers}">
+											<td th:text="${f.id}"></td>
+											<td th:text="${f.date}"></td>
+											<td th:text="${f.count}"></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+
+			<!-- Recent Sales Start -->
+			<!-- <div class="container-fluid pt-4 px-4">
 				<div class="bg-secondary text-center rounded p-4">
 					<div class="d-flex align-items-center justify-content-between mb-4">
 						<h6 class="mb-0">Flowers</h6>
-						<!--  <a href="">Show All</a> -->
+						 <a href="">Show All</a>
 					</div>
 					<div class="table-responsive">
 						<table
@@ -243,8 +299,8 @@
 									<th scope="col">Ide</th>
 									<th scope="col">Date</th>
 									<th scope="col">Count</th>
-									<!-- <th scope="col">Update Date</th>
-									<th scope="col">Action</th> -->
+									<th scope="col">Update Date</th>
+									<th scope="col">Action</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -253,18 +309,18 @@
 									<td th:text="${f.id}"></td>
 									<td th:text="${f.date}"></td>
 									<td th:text="${f.count}"></td>
-									<!-- <td th:text="${s.updateDate}"></td>
+									<td th:text="${s.updateDate}"></td>
 
 									<td><a class="btn btn-sm btn-primary"
 										th:href="@{/stock/edit/{id}(id=${s.id})}">Update</a> <a
 										class="btn btn-sm btn-primary"
-										th:href="@{/stock/delete/{id}(id=${s.id})}">Delete</a></td> -->
+										th:href="@{/stock/delete/{id}(id=${s.id})}">Delete</a></td>
 								</tr>
 							</tbody>
 						</table>
 					</div>
 				</div>
-			</div>
+			</div> -->
 
 
 			<!-- <form id="stockForm" method="get">
@@ -364,7 +420,7 @@ const currentDate = new Date();
 			<!-- Recent Sales End -->
 
 			<!-- Footer Start -->
-			<div class="container-fluid pt-4 px-4">
+			<!-- <div class="container-fluid pt-4 px-4">
 				<div class="bg-secondary rounded-top p-4">
 					<div class="row">
 						<div class="col-12 col-sm-6 text-center text-sm-start">
@@ -372,12 +428,12 @@ const currentDate = new Date();
 							All Right Reserved.
 						</div>
 						<div class="col-12 col-sm-6 text-center text-sm-end">
-							<!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+							/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/
 							Designed By <a href="https://manasvi.tech/">Manasvi Tech</a>
 						</div>
 					</div>
 				</div>
-			</div>
+			</div> -->
 			<!-- Footer End -->
 		</div>
 		<!-- Content End -->

@@ -1,16 +1,23 @@
 package com.manasvi.controller;
 
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.manasvi.entity.Flower;
 import com.manasvi.entity.Tea;
 import com.manasvi.service.FlowerService;
 import com.manasvi.service.StockHistoryService;
@@ -55,7 +62,10 @@ public class FlowerController {
 
 		model.addAttribute("morningTeasTotal", morningTeasTotal);
 		model.addAttribute("eveningTeasTotal", eveningTeasTotal);
-		model.addAttribute("flowers", flowerService.getAllFlowers());
+		List<Flower> flowers = flowerService.getAllFlowers();
+		Collections.reverse(flowers);
+		model.addAttribute("flowers", flowers);
+		model.addAttribute("flower", new Flower());
 		return "flower/flower-list";
 	}
 	
@@ -65,4 +75,11 @@ public class FlowerController {
         return dateTime.toLocalDate();
     }
 	
+	
+	@PostMapping("/add")
+	public String addFlower(@ModelAttribute Flower flower) {
+		flower.setDate(new Date().toString());
+		flowerService.addFlower(flower);
+		return "redirect:/flower/list";
+	}
 }
