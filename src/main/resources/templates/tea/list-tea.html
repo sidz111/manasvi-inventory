@@ -1,39 +1,3 @@
-<!-- <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <title>Tea Management</title>
-</head>
-<body>
-    <h1>Tea Management</h1>
-    <a th:href="@{/tea/add}">Add New Tea</a>
-    <table border="1">
-        <tr>
-            <th>ID</th>
-            <th>Tea Date</th>
-             <th>Tea Type</th>
-            <th>Total Quantity</th>
-            <th>Actions</th>
-        </tr>
-        <tr th:each="tea : ${teaList}">
-            <td th:text="${tea.id}"></td>
-            <td th:text="${tea.date}"></td>
-            <td th:text="${tea.type}"></td>
-            <td th:text="${tea.totalTeaCups}"></td>
-            <td>
-                <a th:href="@{/tea/edit/{id}(id=${tea.id})}">Edit</a> |
-                <a th:href="@{/tea/delete/{id}(id=${tea.id})}">Delete</a>
-            </td>
-        </tr>
-    </table>
-</body>
-</html> -->
-
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
@@ -137,8 +101,7 @@
 							data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Jars
 							Section</a>
 						<div class="dropdown-menu bg-transparent border-0">
-							<a href="button.html" class="dropdown-item">Add Todays Jars</a> <a
-								href="typography.html" class="dropdown-item">Total Jars</a>
+							<a href="/waterjar" class="dropdown-item">About Jars</a>
 						</div>
 					</div>
 					
@@ -356,8 +319,8 @@
 
 
 
-			<form id="stockForm" method="get">
-				<!-- Select Item -->
+			<!-- <form id="stockForm" method="get">
+				Select Item
 				<div class="mb-3">
 					<label for="stockItem" class="form-label">Select Stock
 						Item:</label> <select id="stockItem" name="stockItemId"
@@ -368,17 +331,17 @@
 					</select>
 				</div>
 
-				<!-- Input Count -->
+				Input Count
 				<div class="mb-3">
 					<label for="count" class="form-label">Enter Quantity:</label> <input
 						type="number" id="count" name="count" class="form-control" min="1"
 						required>
 				</div>
 
-				<!-- Submit Button -->
+				Submit Button
 				<button type="submit" class="btn btn-primary">Use Stock</button>
 
-				<!-- Back Link -->
+				Back Link
 				<a href="/" class="btn btn-secondary">Back to Stock List</a>
 			</form>
 
@@ -388,7 +351,7 @@
     <div class="bg-secondary text-center rounded p-4" style="height: 450px; overflow: hidden;">
         <div class="d-flex align-items-center justify-content-between mb-4">
             <h6 class="mb-0">Current Stocks</h6>
-            <!--  <a href="">Show All</a> -->
+             <a href="">Show All</a>
         </div>
         <div class="table-responsive" style="max-height: 380px; overflow-y: auto;">
             <table class="table text-start align-middle table-bordered table-hover mb-0">
@@ -417,7 +380,7 @@
     </div>
 </div>
 
-
+ -->
 
 
 			<script>
@@ -449,26 +412,7 @@ const currentDate = new Date();
     
 </script>
 
-			<!-- Recent Sales End -->
-
-			<!-- Footer Start -->
-			<div class="container-fluid pt-4 px-4">
-				<div class="bg-secondary rounded-top p-4">
-					<div class="row">
-						<div class="col-12 col-sm-6 text-center text-sm-start">
-							&copy; <a href="https://manasvi.tech/">Manasvi Tech Solutions</a>,
-							All Right Reserved.
-						</div>
-						<div class="col-12 col-sm-6 text-center text-sm-end">
-							<!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-							Designed By <a href="https://manasvi.tech/">Manasvi Tech</a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- Footer End -->
-		</div>
-		<!-- Content End -->
+			
 
 		<!-- Back to Top -->
 		<a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i

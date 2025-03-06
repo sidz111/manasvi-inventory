@@ -11,6 +11,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import com.manasvi.entity.Tea;
+import com.manasvi.service.CakeService;
+import com.manasvi.service.FlowerService;
 import com.manasvi.service.StockHistoryService;
 import com.manasvi.service.StockItemService;
 import com.manasvi.service.TeaService;
@@ -30,6 +32,12 @@ public class HomeController {
 
 	@Autowired
 	StockHistoryService stockHistoryService;
+	
+	@Autowired
+	FlowerService flowerService;
+	
+	@Autowired
+	CakeService cakeService;
 
 	@GetMapping("/")
 	public String home(Model model) {
@@ -49,6 +57,8 @@ public class HomeController {
 
 		model.addAttribute("morningTeasTotal", morningTeasTotal);
 		model.addAttribute("eveningTeasTotal", eveningTeasTotal);
+		model.addAttribute("flowers", flowerService.getAllFlowers());
+		model.addAttribute("cakes", cakeService.getAllCakes());
 		return "index";
 	}
 	private LocalDate extractDate(String dateTimeString) {

@@ -1,12 +1,14 @@
 package com.manasvi.controller;
 
 import com.manasvi.entity.WaterJar;
+import com.manasvi.service.StockItemService;
 import com.manasvi.service.WaterJarService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -16,11 +18,16 @@ public class WaterJarController {
 
     @Autowired
     private WaterJarService waterJarService;
+    
+    @Autowired
+    StockItemService stockItemService;
 
     @GetMapping
     public String listWaterJars(Model model) {
         List<WaterJar> waterJars = waterJarService.getAllWaterJars();
         model.addAttribute("waterJars", waterJars);
+        model.addAttribute("waterJar", new WaterJar());
+        model.addAttribute("totalStocks", stockItemService.getAllStockItems());
         return "waterjar/list-waterjar";
     }
 
@@ -32,6 +39,7 @@ public class WaterJarController {
 
     @PostMapping("/save")
     public String saveWaterJar(@ModelAttribute WaterJar waterJar) {
+    	waterJar.setDate(new Date().toString());
         waterJarService.addWaterJar(waterJar);
         return "redirect:/waterjar";
     }
