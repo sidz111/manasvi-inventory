@@ -51,12 +51,12 @@
 						<img class="" src="images/Manasvi.png" alt="" style="width:100%; height: 60%" />
 					</h3>
 				</a>
-				
+
 				<div class="navbar-nav w-100">
-					<a href="/" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+					<a href="/" class="nav-item nav-link"><i class="fa fa-home fs-4 me-2"></i>Dashboard</a>
 					<div class="nav-item dropdown">
 						<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i
-								class="fa fa-laptop me-2"></i>Stocks</a>
+								class="fas fa-wallet fs-4 me-2"></i>Stocks</a>
 						<div class="dropdown-menu bg-transparent border-0">
 							<a href="/stock/add" class="dropdown-item">Add Stocks</a> <a href="/stock/list"
 								class="dropdown-item">List of Stocks</a>
@@ -67,8 +67,8 @@
 
 					<div class="nav-item dropdown">
 						<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i
-								class="fa fa-laptop me-2"></i>Tea
-							Secotion</a>
+								class="fas fa-mug-hot fs-4 me-2"></i>Tea
+							Section</a>
 						<div class="dropdown-menu bg-transparent border-0">
 							<a href="/tea" class="dropdown-item">About Tea's</a>
 						</div>
@@ -79,17 +79,17 @@
 
 					<div class="nav-item dropdown">
 						<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i
-								class="fa fa-laptop me-2"></i>Jars
+								class="fas fa-glass-whiskey fs-4 me-2"></i>Jars
 							Section</a>
 						<div class="dropdown-menu bg-transparent border-0">
-							<a href="/waterjar" class="dropdown-item">About Jars</a>
+							<a href="/waterjar" class="dropdown-item">About Jar's</a>
 						</div>
 					</div>
 
 					<div class="nav-item dropdown">
 						<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i
-								class="fa fa-laptop me-2"></i>Flower
-							Secotion</a>
+								class="fa fa-spa fs-4 me-2"></i>Flower
+							Section</a>
 						<div class="dropdown-menu bg-transparent border-0">
 							<a href="/flower/list" class="dropdown-item">About Flower's</a>
 						</div>
@@ -97,8 +97,8 @@
 
 					<div class="nav-item dropdown">
 						<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i
-								class="fa fa-laptop me-2"></i>Cakes
-							Secotion</a>
+								class="fa fa-birthday-cake fs-4 me-2"></i>Cakes
+							Section</a>
 						<div class="dropdown-menu bg-transparent border-0">
 							<a href="/cakes/list" class="dropdown-item">About Cake's</a>
 						</div>
@@ -152,63 +152,73 @@
 								class="dropdown-item">Settings</a> <a href="/logout" class="dropdown-item">Log Out</a>
 						</div>
 					</div> -->
-					
-					
+
+
 				</div>
 			</nav>
 			<!-- Navbar End -->
 
 			<!-- Dashboard items Start -->
 			<div class="container-fluid pt-4 px-4">
-			    <div class="row g-4"> <!-- Reduced gap -->
-			        <div class="col-md-6">
-			            <div class="bg-white text-dark rounded-4 shadow-sm d-flex flex-column align-items-center justify-content-center p-4 card-hover" style="height: 190px;">
-			                <i class="fa fa-wallet fa-3x text-primary mb-2"></i>
-			                <p class="mb-2 fs-5 fw-semibold text-center">Categories of Stocks</p>
+				<div class="row g-4"> <!-- Reduced gap -->
+					<div class="col-md-6">
+						<div class="bg-white text-dark rounded-4 shadow-sm d-flex flex-column align-items-center justify-content-center p-4 card-hover"
+							style="height: 190px;">
+							<i class="fa fa-wallet fa-3x text-primary mb-2"></i>
+							<p class="mb-2 fs-5 fw-semibold text-center">Categories of Stocks</p>
 							<h3 class="mb-0 fw-bold text-dark" th:text="${totalStocks.size()}"></h3>
-			            </div>
-			        </div>
+						</div>
+					</div>
 
-			        <div class="col-md-6">
-			            <div class="bg-white text-dark rounded-4 shadow-sm d-flex flex-column align-items-center justify-content-center p-4 card-hover" style="height: 190px;">
-			                <i class="fa fa-mug-hot fa-3x text-primary mb-2"></i>
-			                <p class="fs-5 fw-semibold text-center">Morning Cups: <span class="fw-bold" th:text="${morningTeasTotal}"></span></p>
-			                <p class="fs-5 fw-semibold text-center">Evening Cups: <span class="fw-bold" th:text="${eveningTeasTotal}"></span></p>
-			            </div>
-			        </div>
+					<div class="col-md-6">
+						<div class="bg-white text-dark rounded-4 shadow-sm d-flex flex-column align-items-center justify-content-center p-4 card-hover"
+							style="height: 190px;">
+							<i class="fa fa-calendar fa-3x text-primary mb-2"></i>
+							<p class="mb-2 fs-5 fw-semibold text-center">Date</p>
+							<h3 id="currentDate" class="mb-0 fw-bold text-dark"></h3>
+						</div>
+					</div>
 
-			        <div class="col-md-6">
-			            <div class="bg-white text-dark rounded-4 shadow-sm d-flex flex-column align-items-center justify-content-center p-4 card-hover" style="height: 190px;">
-			                <i class="fa fa-glass-whiskey fa-3x text-primary mb-2"></i>
-			                <p class="mb-2 fs-5 fw-semibold text-center">Total Jars</p>
-			                <h3 class="mb-0 fw-bold text-dark" th:text="${totalWaterJars}"></h3>
-			            </div>
-			        </div>
+					<div class="col-md-6">
+						<div class="bg-white text-dark rounded-4 shadow-sm d-flex flex-column align-items-center justify-content-center p-4 card-hover"
+							style="height: 190px;">
+							<i class="fa fa-mug-hot fa-3x text-primary mb-2"></i>
+							<p class="fs-5 fw-semibold text-center">Morning Cups: <span class="fw-bold"
+									th:text="${morningTeasTotal}"></span></p>
+							<p class="fs-5 fw-semibold text-center">Evening Cups: <span class="fw-bold"
+									th:text="${eveningTeasTotal}"></span></p>
+						</div>
+					</div>
 
-			        <div class="col-md-6">
-			            <div class="bg-white text-dark rounded-4 shadow-sm d-flex flex-column align-items-center justify-content-center p-4 card-hover" style="height: 190px;">
-			                <i class="fa fa-calendar fa-3x text-primary mb-2"></i>
-			                <p class="mb-2 fs-5 fw-semibold text-center">Today</p>
-			                <h3 id="currentDate" class="mb-0 fw-bold text-dark"></h3>
-			            </div>
-			        </div>
+					<div class="col-md-6">
+						<div class="bg-white text-dark rounded-4 shadow-sm d-flex flex-column align-items-center justify-content-center p-4 card-hover"
+							style="height: 190px;">
+							<i class="fa fa-glass-whiskey fa-3x text-primary mb-2"></i>
+							<p class="mb-2 fs-5 fw-semibold text-center">Total Jar's</p>
+							<h3 class="mb-0 fw-bold text-dark" th:text="${totalWaterJars}"></h3>
+						</div>
+					</div>
 
-			        <div class="col-md-6">
-			            <div class="bg-white text-dark rounded-4 shadow-sm d-flex flex-column align-items-center justify-content-center p-4 card-hover" style="height: 190px;">
-			                <i class="fa fa-leaf fa-3x text-primary mb-2"></i>
-			                <p class="mb-2 fs-5 fw-semibold text-center">Flowers in this Month</p>
-			                <h3 class="mb-0 fw-bold text-dark" th:text="${flowers.size()}"></h3>
-			            </div>
-			        </div>
 
-			        <div class="col-md-6">
-			            <div class="bg-white text-dark rounded-4 shadow-sm d-flex flex-column align-items-center justify-content-center p-4 card-hover" style="height: 190px;">
-			                <i class="fa fa-birthday-cake fa-3x text-primary mb-2"></i>
-			                <p class="mb-2 fs-5 fw-semibold text-center">Total Cakes</p>
-			                <h3 class="mb-0 fw-bold text-dark" th:text="${cakes.size()}"></h3>
-			            </div>
-			        </div>
-			    </div>
+
+					<div class="col-md-6">
+						<div class="bg-white text-dark rounded-4 shadow-sm d-flex flex-column align-items-center justify-content-center p-4 card-hover"
+							style="height: 190px;">
+							<i class="fa fa-spa fa-3x text-primary mb-2"></i>
+							<p class="mb-2 fs-5 fw-semibold text-center">Flowers in this Month</p>
+							<h3 class="mb-0 fw-bold text-dark" th:text="${flowers.size()}"></h3>
+						</div>
+					</div>
+
+					<div class="col-md-6">
+						<div class="bg-white text-dark rounded-4 shadow-sm d-flex flex-column align-items-center justify-content-center p-4 card-hover"
+							style="height: 190px;">
+							<i class="fa fa-birthday-cake fa-3x text-primary mb-2"></i>
+							<p class="mb-2 fs-5 fw-semibold text-center">Total Cakes</p>
+							<h3 class="mb-0 fw-bold text-dark" th:text="${cakes.size()}"></h3>
+						</div>
+					</div>
+				</div>
 			</div>
 
 

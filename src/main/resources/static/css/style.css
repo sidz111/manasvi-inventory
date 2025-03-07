@@ -160,7 +160,6 @@
 	content: "\f107";
 	font-family: "Font Awesome 5 Free";
 	font-weight: 900;
-	transition: .5s;
 }
 
 .sidebar .navbar .dropdown-toggle[aria-expanded=true]::after {
@@ -175,7 +174,9 @@
 
 .sidebar .navbar .dropdown-item:hover,
 .sidebar .navbar .dropdown-item.active {
-	background: var(--light);
+	color: var(--primary);
+		background: var(--light);
+		border-color: var(--primary);
 }
 
 .content .navbar .navbar-nav .nav-link {
@@ -217,7 +218,7 @@
 	content: "\f107";
 	font-family: "Font Awesome 5 Free";
 	font-weight: 900;
-	transition: .5s;
+	
 }
 
 .content .navbar .dropdown-toggle[aria-expanded=true]::after {
