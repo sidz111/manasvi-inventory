@@ -41,10 +41,14 @@ public class SecurityConfiguration {
 		.hasRole("ADMIN")
 		.requestMatchers("/")
 		.authenticated()
+		.requestMatchers("/css/login.css")
+		.permitAll()
 		.anyRequest()
 		.authenticated()
 		.and()
 		.formLogin()
+		.loginPage("/login-page")
+		.loginProcessingUrl("/login")
 		.defaultSuccessUrl("/")
 		.permitAll();
 		
