@@ -19,10 +19,10 @@ public class ManasviInventoryApplication {
 	@Bean
     CommandLineRunner init(UserRepository userRepository, BCryptPasswordEncoder passwordEncoder) {
         return args -> {
-            if (userRepository.findByEmail("sssurwade2212@gmail.com")==null) {
+            if (userRepository.findByEmail("admin@gmail.com")==null) {
                 User admin = new User();
-                admin.setEmail("sssurwade2212@gmail.com");
-                admin.setPassword(passwordEncoder.encode("admin1234"));
+                admin.setEmail("admin@gmail.com");
+                admin.setPassword(passwordEncoder.encode("admin"));
                 admin.setRole("ADMIN");
                 userRepository.save(admin);
                 System.out.println("Admin user created successfully");
