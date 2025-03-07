@@ -7,7 +7,11 @@ import jakarta.persistence.Id;
 
 @Entity
 public class User {
+<<<<<<< HEAD
 
+=======
+	
+>>>>>>> c3b96378c95209fc31272b058fba98816abf6ff5
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
@@ -44,6 +48,10 @@ public class User {
 	}
 	public void setRole(String role) {
 		this.role = role;
+<<<<<<< HEAD
 	}
 	
+=======
+	}	
+>>>>>>> c3b96378c95209fc31272b058fba98816abf6ff5
 }

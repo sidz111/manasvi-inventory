@@ -7,6 +7,7 @@ import com.manasvi.entity.User;
 public interface UserService {
 
 	User addUser(User user);
+<<<<<<< HEAD
 	
 	User updateUser(User user);
 	
@@ -17,4 +18,10 @@ public interface UserService {
 	List<User> getAllUsers();
 	
 	void deleteUserById(Integer id);
+=======
+	User getUserByEmail(String email);
+	User getUserById(Integer id);
+	List<User> getAllUsers();
+	List<User> getUsersByRole(String role);
+>>>>>>> c3b96378c95209fc31272b058fba98816abf6ff5
 }
