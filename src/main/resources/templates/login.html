@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manasvi tech</title>
+
+    <!-- Only include necessary stylesheets -->
+    <link rel="stylesheet" href="../css/login.css" />
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  </head>
+
+  <body>
+    <!-- Amazing Login Page -->
+    <section id="Amazing-Login-Page">
+      <div class="container">
+        <div class="forms-container">
+          <div class="signin-signup">
+            <!-- Sign In Form -->
+            <form action="/login" method="post" class="sign-in-form">
+              <h2 class="title">Sign in</h2>
+              <div class="input-field">
+                <i class="fas fa-user"></i>
+                <input class="input" type="text" name="username" placeholder="Username" required />
+              </div>
+              <div class="input-field">
+                <i class="fas fa-lock"></i>
+                <input class="input" type="password" name="password" placeholder="Password" required />
+              </div>
+              <input type="submit" value="Login" class="btn solid" />
+            </form>
+
+            <!-- Sign Up Form -->
+            <form action="/add-user" method="post" class="sign-up-form">
+              <h2 class="title">Sign up</h2>
+              <div class="input-field">
+                <i class="fas fa-user"></i>
+                <input class="input" type="text" name="name" placeholder="Enter Name" required />
+              </div>
+              <div class="input-field">
+                <i class="fas fa-envelope"></i>
+                <input class="input" type="text" name="address" placeholder="Enter Address" required />
+              </div>
+              <div class="input-field">
+                <i class="fas fa-lock"></i>
+                <input class="input" type="email" name="email" placeholder="Enter Email" required />
+              </div>
+              <div class="input-field">
+                <i class="fas fa-lock"></i>
+                <input class="input" type="password" name="password" placeholder="Enter Password" required />
+              </div>
+              <div class="input-field">
+                <i class="fas fa-lock"></i>
+                <input class="input" type="text" name="contactNo" placeholder="Enter Contact No" required />
+              </div>
+              <!-- 
+              <button type="submit">Sign up</button> -->
+              <input type="submit" class="btn" value="Sign up" />
+            </form>
+          </div>
+        </div>
+
+        <div class="panels-container">
+          <!-- Left Panel -->
+          <div class="panel left-panel">
+            <div class="content">
+              <h3>New here?</h3>
+              <p>
+                Please create your account to join us!
+              </p>
+              <button class="btn transparent" id="sign-up-btn">Sign up</button>
+            </div>
+            <img src="img/log.svg" class="image" alt="" />
+          </div>
+
+          <!-- Right Panel -->
+          <div class="panel right-panel">
+            <div class="content">
+              <h3>One of us?</h3>
+              <p>
+                Please do Sign in for getting Access.
+              </p>
+              <button class="btn transparent" id="sign-in-btn">Sign in</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Only include necessary scripts -->
+    <script>
+      // Toggle between sign-up and sign-in modes
+      const sign_in_btn = document.querySelector("#sign-in-btn");
+      const sign_up_btn = document.querySelector("#sign-up-btn");
+      const Container = document.querySelector(".container");
+
+      sign_up_btn.addEventListener("click", () => {
+        Container.classList.add("sign-up-mode");
+      });
+
+      sign_in_btn.addEventListener("click", () => {
+        Container.classList.remove("sign-up-mode");
+      });
+    </script>
+
+    <script>
+      // Input focus effects for animated form
+      const inputs = document.querySelectorAll(".input");
+
+      function addcl() {
+        let parent = this.parentNode.parentNode;
+        parent.classList.add("focus");
+      }
+
+      function remcl() {
+        let parent = this.parentNode.parentNode;
+        if (this.value == "") {
+          parent.classList.remove("focus");
+        }
+      }
+
+      inputs.forEach((input) => {
+        input.addEventListener("focus", addcl);
+        input.addEventListener("blur", remcl);
+      });
+    </script>
+  </body>
+</html>

@@ -66,4 +66,9 @@ public class HomeController {
         LocalDateTime dateTime = LocalDateTime.parse(dateTimeString, formatter);
         return dateTime.toLocalDate();
     }
+	
+	@GetMapping("/login-page")
+	public String geLogInPage() {
+		return "login";
+	}
 }

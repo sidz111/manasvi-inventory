@@ -14,7 +14,11 @@ import com.manasvi.service.UserService;
 public class UserServiceImpl implements UserService{
 	
 	@Autowired
+<<<<<<< HEAD
 	UserRepository userRepository;
+=======
+	private UserRepository userRepository;
+>>>>>>> c3b96378c95209fc31272b058fba98816abf6ff5
 
 	@Override
 	public User addUser(User user) {
@@ -22,6 +26,7 @@ public class UserServiceImpl implements UserService{
 	}
 
 	@Override
+<<<<<<< HEAD
 	public User updateUser(User user) {
 		Optional<User> u = Optional.ofNullable(userRepository.getById(user.getId()));
 		if(u.isEmpty()) {
@@ -44,6 +49,8 @@ public class UserServiceImpl implements UserService{
 	}
 
 	@Override
+=======
+>>>>>>> c3b96378c95209fc31272b058fba98816abf6ff5
 	public User getUserByEmail(String email) {
 		Optional<User> u = Optional.ofNullable(userRepository.findByEmail(email));
 		if(u.isEmpty()) {
@@ -55,13 +62,32 @@ public class UserServiceImpl implements UserService{
 	}
 
 	@Override
+<<<<<<< HEAD
+=======
+	public User getUserById(Integer id) {
+		Optional<User> u = userRepository.findById(id);
+		if(u.isEmpty()) {
+			return null;
+		}
+		else {
+			return u.get();
+		}
+	}
+
+	@Override
+>>>>>>> c3b96378c95209fc31272b058fba98816abf6ff5
 	public List<User> getAllUsers() {
 		return this.userRepository.findAll();
 	}
 
 	@Override
+<<<<<<< HEAD
 	public void deleteUserById(Integer id) {
 		this.userRepository.deleteById(id);
+=======
+	public List<User> getUsersByRole(String role) {
+		return this.userRepository.findByRole(role);
+>>>>>>> c3b96378c95209fc31272b058fba98816abf6ff5
 	}
 
 }
