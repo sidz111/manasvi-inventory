@@ -15,7 +15,7 @@ public class ManasviInventoryApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(ManasviInventoryApplication.class, args);
 	}
-	
+	//Before commit
 	@Bean
     CommandLineRunner init(UserRepository userRepository, BCryptPasswordEncoder passwordEncoder) {
         return args -> {
