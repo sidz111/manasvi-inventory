@@ -31,42 +31,36 @@
 
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
-<meta charset="utf-8" />
-<title>Manasvi inventory</title>
-<meta content="width=device-width, initial-scale=1.0" name="viewport" />
-<meta content="" name="keywords" />
-<meta content="" name="description" />
+	<meta charset="utf-8" />
+	<title>Manasvi inventory</title>
+	<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+	<meta content="" name="keywords" />
+	<meta content="" name="description" />
 
-<!-- Favicon -->
-<link href="/images/Manasvi.png" rel="icon" />
+	<!-- Favicon -->
+	<link href="../images/fevicon.png" rel="icon" />
 
-<!-- Google Web Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link
-	href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700&display=swap"
-	rel="stylesheet" />
+	<!-- Google Web Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700&display=swap"
+		rel="stylesheet" />
 
-<!-- Icon Font Stylesheet -->
-<link
-	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
-	rel="stylesheet" />
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
-	rel="stylesheet" />
+	<!-- Icon Font Stylesheet -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet" />
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
 
-<!-- Libraries Stylesheet -->
-<link href="lib/owlcarousel/assets/owl.carousel.min.css"
-	rel="stylesheet" />
-<link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css"
-	rel="stylesheet" />
+	<!-- Libraries Stylesheet -->
+	<link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+	<link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
 
-<!-- Customized Bootstrap Stylesheet -->
-<link href="/css/bootstrap.min.css" rel="stylesheet" />
+	<!-- Customized Bootstrap Stylesheet -->
+	<link href="/css/bootstrap.min.css" rel="stylesheet" />
 
-<!-- Template Stylesheet -->
-<link href="/css/style.css" rel="stylesheet" />
+	<!-- Template Stylesheet -->
+	<link href="/css/style.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -74,8 +68,7 @@
 		<!-- Spinner Start -->
 		<div id="spinner"
 			class="show bg-dark position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-			<div class="spinner-border text-primary"
-				style="width: 3rem; height: 3rem" role="status">
+			<div class="spinner-border text-primary" style="width: 3rem; height: 3rem" role="status">
 				<span class="sr-only">Loading...</span>
 			</div>
 		</div>
@@ -83,70 +76,60 @@
 
 		<!-- Sidebar Start -->
 		<div class="sidebar pe-4 pb-3">
-			<nav class="navbar bg-secondary navbar-dark">
+			<nav class="navbar bg-white text-dark">
 				<a href="/" class="navbar-brand mx-4 mb-3">
 					<h3 class="text-primary">
-						<i class="fa fa-user-edit me-2"></i>Manasvi
+						<img class="" src="../images/Manasvi.png" alt="" style="width:100%; height: 60%" />
 					</h3>
 				</a>
-				<div class="d-flex align-items-center ms-4 mb-4">
-					<div class="position-relative">
-						<img class="rounded-circle" src="/images/Manasvi.png" alt=""
-							style="width: 40px; height: 40px" />
-						<div
-							class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
-					</div>
-					<div class="ms-3">
-						<h6 class="mb-0">Manasvi</h6>
-						<span>Admin</span>
-					</div>
-				</div>
+
 				<div class="navbar-nav w-100">
-					<a href="/" class="nav-item nav-link active"><i
-						class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+					<a href="/" class="nav-item nav-link"><i class="fa fa-home fs-4 me-2"></i>Dashboard</a>
 					<div class="nav-item dropdown">
-						<a href="#" class="nav-link dropdown-toggle"
-							data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Stocks</a>
+						<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i
+								class="fas fa-wallet fs-4 me-2"></i>Stocks</a>
 						<div class="dropdown-menu bg-transparent border-0">
-							<a href="/stock/add" class="dropdown-item">Add Stocks</a> <a
-								href="/stock/list" class="dropdown-item">List of Stocks</a>
+							<a href="/stock/add" class="dropdown-item">Add Stocks</a> <a href="/stock/list"
+								class="dropdown-item">List of Stocks</a>
 						</div>
 					</div>
 
 
 
 					<div class="nav-item dropdown">
-						<a href="#" class="nav-link dropdown-toggle"
-							data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Tea
-							Secotion</a>
+						<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i
+								class="fas fa-mug-hot fs-4 me-2"></i>Tea
+							Section</a>
 						<div class="dropdown-menu bg-transparent border-0">
 							<a href="/tea" class="dropdown-item">About Tea's</a>
 						</div>
 					</div>
 
+
+
+
 					<div class="nav-item dropdown">
-						<a href="#" class="nav-link dropdown-toggle"
-							data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Jars
+						<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i
+								class="fas fa-glass-whiskey fs-4 me-2"></i>Jars
 							Section</a>
 						<div class="dropdown-menu bg-transparent border-0">
-							<a href="/waterjar" class="dropdown-item">About Jars</a>
+							<a href="/waterjar" class="dropdown-item">About Jar's</a>
 						</div>
 					</div>
 
 					<div class="nav-item dropdown">
-						<a href="#" class="nav-link dropdown-toggle"
-							data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Flower
-							Secotion</a>
+						<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i
+								class="fa fa-spa fs-4 me-2"></i>Flower
+							Section</a>
 						<div class="dropdown-menu bg-transparent border-0">
 							<a href="/flower/list" class="dropdown-item">About Flower's</a>
 						</div>
 					</div>
 
-
 					<div class="nav-item dropdown">
-						<a href="#" class="nav-link dropdown-toggle"
-							data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Cakes
-							Secotion</a>
+						<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i
+								class="fa fa-birthday-cake fs-4 me-2"></i>Cakes
+							Section</a>
 						<div class="dropdown-menu bg-transparent border-0">
 							<a href="/cakes/list" class="dropdown-item">About Cake's</a>
 						</div>
@@ -158,36 +141,31 @@
 		<!-- Content Start -->
 		<div class="content">
 			<!-- Navbar Start -->
-			<nav
-				class="navbar navbar-expand bg-secondary navbar-dark sticky-top px-4 py-0">
+			<nav class="navbar navbar-expand navbar-dark sticky-top px-4 py-0" style="background-color: #008bf9;">
 				<a href="/" class="navbar-brand d-flex d-lg-none me-4">
 					<h2 class="text-primary mb-0">
 						<i class="fa fa-user-edit"></i>
 					</h2>
-				</a> <a href="#" class="sidebar-toggler flex-shrink-0"> <i
-					class="fa fa-bars"></i>
+				</a> <a href="#" class="sidebar-toggler flex-shrink-0"> <i class="fa fa-bars"></i>
 				</a>
 				<!-- <form class="d-none d-md-flex ms-4">
-					<input class="form-control bg-dark border-0" type="search"
-						placeholder="Search" />
-				</form> -->
-				<h2 class="ms-5 text-danger">Manasvi Inventory System</h2>
+												<input class="form-control bg-dark border-0" type="search"
+													placeholder="Search" />
+											</form> -->
+				<h2 class="ms-5 text-blue">Manasvi Inventory System</h2>
 				<div class="navbar-nav align-items-center ms-auto">
 					<div class="nav-item dropdown">
-						<a href="#" class="nav-link dropdown-toggle"
-							data-bs-toggle="dropdown"> <i class="fa fa-bell me-lg-2"></i>
+						<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"> <i
+								class="text-danger fa fa-bell me-lg-2"></i>
 							<span class="d-none d-lg-inline-flex">Notification</span>
 						</a>
-						<div
-							class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
+						<div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
 							<!-- Loop over totalStocks to display each stock item -->
 							<div class="text-warning d-flex flex-wrap">
-								<div th:each="stock : ${totalStocks}"
-									class="d-flex align-items-center me-4">
+								<div th:each="stock : ${totalStocks}" class="d-flex align-items-center mx-auto">
 									<!-- Increased margin-right -->
-									<strong th:if="${stock.totalStocks} < 10"
-										th:text="${stock.name}"></strong> <small class="ms-2"
-										th:if="${stock.totalStocks} < 10"
+									<strong th:if="${stock.totalStocks} < 10" th:text="${stock.name}"></strong> <small
+										class="ms-2" th:if="${stock.totalStocks} < 10"
 										th:text="${stock.totalStocks}"></small>
 								</div>
 							</div>
@@ -195,20 +173,18 @@
 						</div>
 					</div>
 
-					<div class="nav-item dropdown">
-						<a href="#" class="nav-link dropdown-toggle"
-							data-bs-toggle="dropdown"> <img
-							class="rounded-circle me-lg-2" src="/images/Manasvi.png" alt=""
-							style="width: 40px; height: 40px" /> <span
-							class="d-none d-lg-inline-flex">Admin</span>
-						</a>
-						<div
-							class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
-							<a href="#" class="dropdown-item">My Profile</a> <a href="#"
-								class="dropdown-item">Settings</a> <a href="/logout"
-								class="dropdown-item">Log Out</a>
-						</div>
-					</div>
+					<!--<div class="nav-item dropdown">
+													<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"> <img
+															class="rounded-circle me-lg-2" src="images/fevicon.png" alt=""
+															style="width: 40px; height: 40px" /> <span class="d-none d-lg-inline-flex">Admin</span>
+													</a>
+													<div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
+														<a href="#" class="dropdown-item">My Profile</a> <a href="#"
+															class="dropdown-item">Settings</a> <a href="/logout" class="dropdown-item">Log Out</a>
+													</div>
+												</div> -->
+
+
 				</div>
 			</nav>
 			<!-- Navbar End -->
@@ -273,20 +249,21 @@
 				<div class="row g-4">
 					<!-- Form Section (Left Side) -->
 					<div class="col-sm-12 col-xl-6">
-						<div class="bg-secondary rounded h-100 p-4">
-							<h6 class="mb-4 text-center">Today's Jar's</h6>
-							<form th:action="@{/waterjar/save}" method="post"
-								th:object="${waterJar}">
+						<div class="bg-white text-dark rounded-4 shadow-lg p-4 card-hover">
+							<h6 class="mb-4 text-dark fw-bold fs-3 text-center">Today's Jars</h6>
+							<form th:action="@{/waterjar/save}" method="post" th:object="${waterJar}">
 								<div class="mb-3">
-									<label for="jarOwner" class="form-label">Owner Name</label> <input
-										type="text" class="form-control" id="jarOwner"
-										th:field="*{jarOwner}" required />
+									<label for="jarOwner" class="form-label fw-bold fs-5 text-secondary">Owner
+										Name</label> <input type="text"
+										class="form-control bg-white text-dark border-2 border-secondary shadow-sm fw-semibold fs-6 p-3"
+										id="jarOwner" th:field="*{jarOwner}" required />
 								</div>
 
 								<div class="mb-3">
-									<label for="totalJars" class="form-label">Total Jars</label> <input
-										type="number" class="form-control" id="totalJars"
-										th:field="*{totalJars}" required />
+									<label for="totalJars" class="form-label fw-bold fs-5 text-secondary">Total
+										Jars</label> <input type="number"
+										class="form-control bg-white text-dark border-2 border-secondary shadow-sm fw-semibold fs-6 p-3"
+										id="totalJars" th:field="*{totalJars}" required />
 								</div>
 
 								<!-- <div class="mb-3">
@@ -295,8 +272,9 @@
 										required />
 								</div> -->
 
-								<div class="d-flex justify-content-center">
-									<button type="submit" class="btn btn-primary">Add Jars</button>
+								<div class="d-flex justify-content-center mt-3">
+									<button type="submit" class="btn btn-primary fw-bold px-4 py-2 fs-5 shadow">Add
+										Jars</button>
 								</div>
 							</form>
 
@@ -305,33 +283,30 @@
 
 					<!-- Tea Statistics Section (Right Side) -->
 					<div class="col-sm-12 col-xl-6">
-						<div class="bg-secondary text-center rounded p-4"
-							style="height: 400px; overflow: hidden;">
-							<div
-								class="d-flex align-items-center justify-content-between mb-4">
-								<h6 class="mb-0">Jar's Statistics</h6>
-							</div>
-							<div class="table-responsive"
-								style="max-height: 320px; overflow-y: auto;">
-								<table
-									class="table text-start align-middle table-bordered table-hover mb-0">
-									<thead>
-										<tr>
-											<th>ID</th>
-											<th>Owner</th>
-											<th>Jars</th>
-											<th>Date</th>
-											<th>Actions</th>
+						<div class="bg-white text-dark rounded-4 shadow-lg p-4 card-hover">
+
+							<h6 class="mb-4 text-dark fw-bold fs-3 text-center">Jar's Statistics</h6>
+
+							<div class="table-responsive" style="height: 387px; overflow-y: auto;">
+								<table class="table text-center align-middle table-bordered table-hover shadow-sm">
+									<thead class="bg-secondary text-white">
+										<tr class="text-white">
+											<th class="fw-bold fs-5">ID</th>
+											<th class="fw-bold fs-5">Owner</th>
+											<th class="fw-bold fs-5">Jars</th>
+											<th class="fw-bold fs-5">Date</th>
+											<th class="fw-bold fs-5">Actions</th>
 										</tr>
 
 									</thead>
 									<tbody>
-										<tr th:each="jar : ${waterJars}">
-											<td th:text="${jar.id}"></td>
-											<td th:text="${jar.jarOwner}"></td>
-											<td th:text="${jar.totalJars}"></td>
-											<td th:text="${jar.date}"></td>
-											<td><a th:href="@{/waterjar/delete/{id}(id=${jar.id})}">Delete</a>
+										<tr th:each="jar : ${waterJars}" class="fw-semibold fs-6 text-dark">
+											<td th:text="${jar.id}" class="p-3"></td>
+											<td th:text="${jar.jarOwner}" class="p-3"></td>
+											<td th:text="${jar.totalJars}" class="p-3"></td>
+											<td th:text="${jar.date}" class="p-3"></td>
+											<td><a class="btn btn-primary fw-bold px-2 py-1 fs-5 shadow"
+													th:href="@{/waterjar/delete/{id}(id=${jar.id})}">Delete</a>
 											</td>
 										</tr>
 									</tbody>
@@ -345,43 +320,41 @@
 
 
 			<script>
-    document.getElementById("stockForm").addEventListener("submit", function(event) {
-        var stockItemId = document.getElementById("stockItem").value;
-        var count = document.getElementById("count").value;
-        
-        if (!stockItemId || !count || count <= 0) {
-            alert("Please select a stock item and enter a valid quantity.");
-            event.preventDefault();
-            return;
-        }
+				document.getElementById("stockForm").addEventListener("submit", function (event) {
+					var stockItemId = document.getElementById("stockItem").value;
+					var count = document.getElementById("count").value;
 
-        // Set the form action dynamically
-        this.action = "/stock/use-stock/" + stockItemId + "/" + count;
-    });
-      
-    const formatDate = (date) => {
-    const year = date.getFullYear();
-    const month = String(date.getMonth() + 1).padStart(2, '0'); // Months are 0-indexed
-    const day = String(date.getDate()).padStart(2, '0');
+					if (!stockItemId || !count || count <= 0) {
+						alert("Please select a stock item and enter a valid quantity.");
+						event.preventDefault();
+						return;
+					}
 
-    return `${year}-${month}-${day}`;
-};
+					// Set the form action dynamically
+					this.action = "/stock/use-stock/" + stockItemId + "/" + count;
+				});
 
-const currentDate = new Date();
- document.querySelector("#currentDate").innerHTML=formatDate(currentDate);
-    
-    
-</script>
+				const formatDate = (date) => {
+					const year = date.getFullYear();
+					const month = String(date.getMonth() + 1).padStart(2, '0'); // Months are 0-indexed
+					const day = String(date.getDate()).padStart(2, '0');
+
+					return `${year}-${month}-${day}`;
+				};
+
+				const currentDate = new Date();
+				document.querySelector("#currentDate").innerHTML = formatDate(currentDate);
+
+
+			</script>
 
 			<!-- Back to Top -->
-			<a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i
-				class="bi bi-arrow-up"></i></a>
+			<a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
 		</div>
 
 		<!-- JavaScript Libraries -->
 		<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-		<script
-			src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
 		<script src="lib/chart/chart.min.js"></script>
 		<script src="lib/easing/easing.min.js"></script>
 		<script src="lib/waypoints/waypoints.min.js"></script>
@@ -393,5 +366,5 @@ const currentDate = new Date();
 		<!-- Template Javascript -->
 		<script src="/js/main.js"></script>
 </body>
-</html>
 
+</html>
