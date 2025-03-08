@@ -2,34 +2,66 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-	<meta charset="utf-8" />
-	<title>Manasvi inventory</title>
-	<meta content="width=device-width, initial-scale=1.0" name="viewport" />
-	<meta content="" name="keywords" />
-	<meta content="" name="description" />
+<meta charset="utf-8" />
+<title>Manasvi inventory</title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+<meta content="" name="keywords" />
+<meta content="" name="description" />
 
-	<!-- Favicon -->
-	<link href="../images/fevicon.png" rel="icon" />
+<!-- Favicon -->
+<link href="../images/fevicon.png" rel="icon" />
 
-	<!-- Google Web Fonts -->
-	<link rel="preconnect" href="https://fonts.googleapis.com" />
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700&display=swap"
-		rel="stylesheet" />
+<!-- Google Web Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+	href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700&display=swap"
+	rel="stylesheet" />
 
-	<!-- Icon Font Stylesheet -->
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet" />
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+<!-- Icon Font Stylesheet -->
+<link
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+	rel="stylesheet" />
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+	rel="stylesheet" />
 
-	<!-- Libraries Stylesheet -->
-	<link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
-	<link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+<!-- Libraries Stylesheet -->
+<link href="lib/owlcarousel/assets/owl.carousel.min.css"
+	rel="stylesheet" />
+<link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css"
+	rel="stylesheet" />
 
-	<!-- Customized Bootstrap Stylesheet -->
-	<link href="/css/bootstrap.min.css" rel="stylesheet" />
+<!-- Customized Bootstrap Stylesheet -->
+<link href="/css/bootstrap.min.css" rel="stylesheet" />
 
-	<!-- Template Stylesheet -->
-	<link href="/css/style.css" rel="stylesheet" />
+<!-- Template Stylesheet -->
+<link href="/css/style.css" rel="stylesheet" />
+
+<style>
+    /* Modal Styles */
+    .modal {
+        display: none; /* Initially hidden */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+        z-index: 9999; /* Ensure it's on top */
+        align-items: center;
+        justify-content: center;
+    }
+
+    .modal-content {
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+</style>
+
 </head>
 
 <body>
@@ -37,7 +69,8 @@
 		<!-- Spinner Start -->
 		<div id="spinner"
 			class="show bg-dark position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-			<div class="spinner-border text-primary" style="width: 3rem; height: 3rem" role="status">
+			<div class="spinner-border text-primary"
+				style="width: 3rem; height: 3rem" role="status">
 				<span class="sr-only">Loading...</span>
 			</div>
 		</div>
@@ -48,47 +81,46 @@
 			<nav class="navbar bg-white text-dark">
 				<a href="/" class="navbar-brand mx-4 mb-3">
 					<h3 class="text-primary">
-						<img class="" src="../images/Manasvi.png" alt="" style="width:100%; height: 60%" />
+						<img class="" src="../images/Manasvi.png" alt=""
+							style="width: 100%; height: 60%" />
 					</h3>
 				</a>
 
 				<div class="navbar-nav w-100">
-					<a href="/" class="nav-item nav-link"><i class="fa fa-home fs-4 me-2"></i>Dashboard</a>
+					<a href="/" class="nav-item nav-link"><i
+						class="fa fa-home fs-4 me-2"></i>Dashboard</a>
 					<div class="nav-item dropdown">
-						<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i
-								class="fas fa-wallet fs-4 me-2"></i>Stocks</a>
+						<a href="#" class="nav-link dropdown-toggle"
+							data-bs-toggle="dropdown"><i class="fas fa-wallet fs-4 me-2"></i>Stocks</a>
 						<div class="dropdown-menu bg-transparent border-0">
-							<a href="/stock/add" class="dropdown-item">Add Stocks</a> <a href="/stock/list"
-								class="dropdown-item">List of Stocks</a>
+							<a href="/stock/add" class="dropdown-item">Add Stocks</a> <a
+								href="/stock/list" class="dropdown-item">List of Stocks</a>
 						</div>
 					</div>
 
 
 
 					<div class="nav-item dropdown">
-						<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i
-								class="fas fa-mug-hot fs-4 me-2"></i>Tea
+						<a href="#" class="nav-link dropdown-toggle"
+							data-bs-toggle="dropdown"><i class="fas fa-mug-hot fs-4 me-2"></i>Tea
 							Section</a>
 						<div class="dropdown-menu bg-transparent border-0">
 							<a href="/tea" class="dropdown-item">About Tea's</a>
 						</div>
 					</div>
 
-
-
-
 					<div class="nav-item dropdown">
-						<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i
-								class="fas fa-glass-whiskey fs-4 me-2"></i>Jars
-							Section</a>
+						<a href="#" class="nav-link dropdown-toggle"
+							data-bs-toggle="dropdown"><i
+							class="fas fa-glass-whiskey fs-4 me-2"></i>Jars Section</a>
 						<div class="dropdown-menu bg-transparent border-0">
 							<a href="/waterjar" class="dropdown-item">About Jar's</a>
 						</div>
 					</div>
 
 					<div class="nav-item dropdown">
-						<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i
-								class="fa fa-spa fs-4 me-2"></i>Flower
+						<a href="#" class="nav-link dropdown-toggle"
+							data-bs-toggle="dropdown"><i class="fa fa-spa fs-4 me-2"></i>Flower
 							Section</a>
 						<div class="dropdown-menu bg-transparent border-0">
 							<a href="/flower/list" class="dropdown-item">About Flower's</a>
@@ -96,9 +128,9 @@
 					</div>
 
 					<div class="nav-item dropdown">
-						<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i
-								class="fa fa-birthday-cake fs-4 me-2"></i>Cakes
-							Section</a>
+						<a href="#" class="nav-link dropdown-toggle"
+							data-bs-toggle="dropdown"><i
+							class="fa fa-birthday-cake fs-4 me-2"></i>Cakes Section</a>
 						<div class="dropdown-menu bg-transparent border-0">
 							<a href="/cakes/list" class="dropdown-item">About Cake's</a>
 						</div>
@@ -110,132 +142,79 @@
 		<!-- Content Start -->
 		<div class="content">
 			<!-- Navbar Start -->
-			<nav class="navbar navbar-expand navbar-dark sticky-top px-4 py-0" style="background-color: #008bf9;">
+			<nav class="navbar navbar-expand navbar-dark sticky-top px-4 py-0"
+				style="background-color: #008bf9;">
 				<a href="/" class="navbar-brand d-flex d-lg-none me-4">
 					<h2 class="text-primary mb-0">
 						<i class="fa fa-user-edit"></i>
 					</h2>
-				</a> <a href="#" class="sidebar-toggler flex-shrink-0"> <i class="fa fa-bars"></i>
+				</a> <a href="#" class="sidebar-toggler flex-shrink-0"> <i
+					class="fa fa-bars"></i>
 				</a>
-				<!-- <form class="d-none d-md-flex ms-4">
-								<input class="form-control bg-dark border-0" type="search"
-									placeholder="Search" />
-							</form> -->
 				<h2 class="ms-5 text-blue">Manasvi Inventory System</h2>
 				<div class="navbar-nav align-items-center ms-auto">
 					<div class="nav-item dropdown">
-						<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"> <i
-								class="text-danger fa fa-bell me-lg-2"></i>
-							<span class="d-none d-lg-inline-flex">Notification</span>
+						<a href="#" class="nav-link dropdown-toggle"
+							data-bs-toggle="dropdown"> <i
+							class="text-danger fa fa-bell me-lg-2"></i> <span
+							class="d-none d-lg-inline-flex">Notification</span>
 						</a>
-						<div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
+						<div
+							class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
 							<!-- Loop over totalStocks to display each stock item -->
 							<div class="text-warning d-flex flex-wrap">
-								<div th:each="stock : ${totalStocks}" class="d-flex align-items-center mx-auto">
+								<div th:each="stock : ${totalStocks}"
+									class="d-flex align-items-center mx-auto">
 									<!-- Increased margin-right -->
-									<strong th:if="${stock.totalStocks} < 10" th:text="${stock.name}"></strong> <small
-										class="ms-2" th:if="${stock.totalStocks} < 10"
+									<strong th:if="${stock.totalStocks} < 10"
+										th:text="${stock.name}"></strong> <small class="ms-2"
+										th:if="${stock.totalStocks} < 10"
 										th:text="${stock.totalStocks}"></small>
 								</div>
 							</div>
-
 						</div>
 					</div>
-
-					<!--<div class="nav-item dropdown">
-									<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"> <img
-											class="rounded-circle me-lg-2" src="images/fevicon.png" alt=""
-											style="width: 40px; height: 40px" /> <span class="d-none d-lg-inline-flex">Admin</span>
-									</a>
-									<div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-										<a href="#" class="dropdown-item">My Profile</a> <a href="#"
-											class="dropdown-item">Settings</a> <a href="/logout" class="dropdown-item">Log Out</a>
-									</div>
-								</div> -->
-
-
 				</div>
 			</nav>
-			<!-- Navbar End -->
 
-			<!-- Dashboard items Start -->
-			<!-- <div class="container-fluid pt-4 px-4">
-				<div class="row g-5">
-					<div class="col-md-6">
-						<div
-							class="bg-secondary rounded d-flex flex-column align-items-center justify-content-center p-4"
-							style="height: 200px;">
-							<i class="fa fa-wallet fa-3x text-primary mb-3"></i>
-							<div class="text-center">
-								<p class="mb-2 fs-5">Categories of Stocks</p>
-								<h4 class="mb-0" th:text="${totalStocks.size()}"></h4>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-6">
-						<div
-							class="bg-secondary rounded d-flex flex-column align-items-center justify-content-center p-4"
-							style="height: 200px;">
-							<i class="fa fa-mug-hot fa-3x text-primary mb-3"></i>
-							<div class="text-center">
-								<p class="fs-5">
-									<strong>Morning Cups:</strong> <span
-										th:text="${morningTeasTotal}"></span>
-								</p>
-								<p class="fs-5">
-									<strong>Evening Cups:</strong> <span
-										th:text="${eveningTeasTotal}"></span>
-								</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-6">
-						<div
-							class="bg-secondary rounded d-flex flex-column align-items-center justify-content-center p-4"
-							style="height: 200px;">
-							<i class="fa fa-glass-whiskey fa-3x text-primary mb-3"></i>
-							<div class="text-center">
-								<p class="mb-2 fs-5">Total Jars</p>
-								<h4 class="mb-0" th:text="${totalWaterJars}"></h4>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-6">
-						<div
-							class="bg-secondary rounded d-flex flex-column align-items-center justify-content-center p-4"
-							style="height: 200px;">
-							<i class="fa fa-calendar fa-3x text-primary mb-3"></i>
-							<div class="text-center">
-								<p class="mb-2 fs-5">Today</p>
-								<h4 id="currentDate" class="mb-0"></h4>
-							</div>
-						</div>
+			<!-- Error Modal -->
+			<th:block th:if="${error}">
+				<div id="errorModal" class="modal">
+					<div class="modal-content">
+						<h1 class="text-dark" th:text="${error}"></h1>
 					</div>
 				</div>
-			</div> -->
+			</th:block>
 
 
-			<form id="stockForm" method="get" class="p-4 bg-white rounded shadow-lg" style="border: 2px solid var(--light)">
+
+			<form id="stockForm" method="get"
+				class="p-4 bg-white rounded shadow-lg"
+				style="border: 2px solid var(--light)">
 				<div class="mb-4">
-					<label for="stockItem" class="form-label fw-bold fs-5">Select Stock Item:</label>
-					<select id="stockItem" name="stockItemId" class="form-control form-select border-2" required>
+					<label for="stockItem" class="form-label fw-bold fs-5">Select
+						Stock Item:</label> <select id="stockItem" name="stockItemId"
+						class="form-control form-select border-2" required>
 						<option value="" disabled selected>Select an item</option>
-						<option th:each="item : ${totalStocks}" th:value="${item.id}" th:text="${item.name}"></option>
+						<option th:each="item : ${totalStocks}" th:value="${item.id}"
+							th:text="${item.name}"></option>
 					</select>
 				</div>
 
 				<div class="mb-4">
-					<label for="count" class="form-label fw-bold fs-5">Enter Quantity:</label>
-					<input type="number" id="count" placeholder="5" name="count" class="form-control bg-white border-2" min="1" required>
+					<label for="count" class="form-label fw-bold fs-5">Enter
+						Quantity:</label> <input type="number" id="count"
+						placeholder="Enter Quantity" name="count"
+						class="form-control bg-white border-2" min="1" required>
 				</div>
 
 				<div class="d-flex justify-content-between">
-					<button type="submit" class="btn btn-warning px-4 py-2 fw-bold fs-5">Use Stock</button>
-					<a href="/" class="btn btn-secondary px-4 py-2 fw-bold fs-5">Back to Stock List</a>
+					<button type="submit"
+						class="btn btn-warning px-4 py-2 fw-bold fs-5">Use Stock</button>
+					<a href="/stock/add"
+						class="btn btn-secondary px-4 py-2 fw-bold fs-5">Add new Stock</a>
 				</div>
 			</form>
-
-
 			<!-- Dashboard items End -->
 
 			<!-- Recent Sales Start -->
@@ -243,11 +222,13 @@
 				<div class="bg-white text-dark rounded-4 shadow-lg p-4 card-hover"
 					style="height: 450px; overflow: hidden;">
 					<div class="d-flex align-items-center justify-content-between mb-4">
-						<h6 class="mb-4 text-dark fw-bold fs-3 text-center">Current Stocks</h6>
-						<a href="" class="text-primary fw-semibold fs-5">Show All</a>
+						<h6 class="mb-4 text-dark fw-bold fs-3 text-center">Current
+							Stocks</h6>
 					</div>
-					<div class="table-responsive" style="max-height: 380px; overflow-y: auto;">
-						<table class="table text-center align-middle table-bordered table-hover shadow-sm">
+					<div class="table-responsive"
+						style="max-height: 380px; overflow-y: auto;">
+						<table
+							class="table text-center align-middle table-bordered table-hover shadow-sm">
 							<thead class="bg-secondary text-white">
 								<tr>
 									<th scope="col" class="fw-bold fs-5">Name</th>
@@ -258,17 +239,17 @@
 								</tr>
 							</thead>
 							<tbody>
-								<tr th:each="s : ${totalStocks}" class="fw-semibold fs-6 text-dark">
+								<tr th:each="s : ${totalStocks}"
+									class="fw-semibold fs-6 text-dark">
 									<td th:text="${s.name}" class="p-3"></td>
 									<td th:text="${s.totalStocks}" class="p-3"></td>
 									<td th:text="${s.addedDate}" class="p-3"></td>
 									<td th:text="${s.updateDate}" class="p-3"></td>
-									<td class="p-3">
-										<a class="btn btn-warning fw-bold px-4 py-2 shadow mx-3"
-											th:href="@{/stock/edit/{id}(id=${s.id})}">Update</a>
-										<a class="btn btn-danger fw-bold px-4 py-2 shadow mx-3"
-											th:href="@{/stock/delete/{id}(id=${s.id})}">Delete</a>
-									</td>
+									<td class="p-3"><a
+										class="btn btn-warning fw-bold px-4 py-2 shadow mx-3"
+										th:href="@{/stock/edit/{id}(id=${s.id})}">Update</a> <a
+										class="btn btn-danger fw-bold px-4 py-2 shadow mx-3"
+										th:href="@{/stock/delete/{id}(id=${s.id})}">Delete</a></td>
 								</tr>
 							</tbody>
 						</table>
@@ -276,41 +257,17 @@
 				</div>
 			</div>
 
-
-
-
-			<!-- <form id="stockForm" method="get">
-				<div class="mb-3">
-					<label for="stockItem" class="form-label">Select Stock
-						Item:</label> <select id="stockItem" name="stockItemId"
-						class="form-control" required>
-						<option value="" disabled selected>Select an item</option>
-						<option th:each="item : ${totalStocks}" th:value="${item.id}"
-							th:text="${item.name}"></option>
-					</select>
-				</div>
-
-				<div class="mb-3">
-					<label for="count" class="form-label">Enter Quantity:</label> <input
-						type="number" id="count" name="count" class="form-control" min="1"
-						required>
-				</div>
-
-				<button type="submit" class="btn btn-primary">Use Stock</button>
-				<a href="/" class="btn btn-secondary">Back to Stock List</a>
-			</form> -->
-
-
-
-			<div class="container-fluid pt-4 px-4">
+			<div class="container-fluid pt-4 mb-5 px-4">
 				<div class="bg-white text-dark rounded-4 shadow-lg p-4 card-hover"
 					style="height: 450px; overflow: hidden;">
 					<div class="d-flex align-items-center justify-content-between mb-4">
-						<h6 class="mb-4 text-dark fw-bold fs-3 text-center">Stock History</h6>
-						<a href="" class="text-primary fw-semibold fs-5">Show All</a>
+						<h6 class="mb-4 text-dark fw-bold fs-3 text-center">Stock
+							History</h6>
 					</div>
-					<div class="table-responsive" style="max-height: 380px; overflow-y: auto;">
-						<table class="table text-center align-middle table-bordered table-hover shadow-sm">
+					<div class="table-responsive"
+						style="max-height: 380px; overflow-y: auto;">
+						<table
+							class="table mb-5 text-center align-middle table-bordered table-hover shadow-sm">
 							<thead class="bg-secondary text-white">
 								<tr>
 									<th scope="col" class="fw-bold fs-5">Name</th>
@@ -322,7 +279,8 @@
 								</tr>
 							</thead>
 							<tbody>
-								<tr th:each="s : ${allStockHistories}" class="fw-semibold fs-6 text-dark">
+								<tr th:each="s : ${allStockHistories}"
+									class="fw-semibold fs-6 text-dark">
 									<td th:text="${s.stockItem.name}" class="p-3"></td>
 									<td th:text="${s.action}" class="p-3"></td>
 									<td th:text="${s.timestamp}" class="p-3"></td>
@@ -373,15 +331,12 @@
 
 
 		</div>
-		<!-- Content End -->
-
-		<!-- Back to Top -->
-		<a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
 	</div>
 
 	<!-- JavaScript Libraries -->
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
 	<script src="lib/chart/chart.min.js"></script>
 	<script src="lib/easing/easing.min.js"></script>
 	<script src="lib/waypoints/waypoints.min.js"></script>
@@ -389,6 +344,21 @@
 	<script src="lib/tempusdominus/js/moment.min.js"></script>
 	<script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
 	<script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+<script>
+    // Show the modal and hide after 3 seconds
+    window.onload = function() {
+        const errorModal = document.getElementById("errorModal");
+        if (errorModal) {
+            // Show the modal
+            errorModal.style.display = "flex";
+            
+            // Hide the modal after 3 seconds
+            setTimeout(function() {
+                errorModal.style.display = "none";
+            }, 3000); // Hide after 3 seconds
+        }
+    };
+</script>
 
 	<!-- Template Javascript -->
 	<script src="/js/main.js"></script>
