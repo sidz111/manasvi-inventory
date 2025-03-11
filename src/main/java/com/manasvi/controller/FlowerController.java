@@ -78,7 +78,6 @@ public class FlowerController {
 	
 	@PostMapping("/add")
 	public String addFlower(@ModelAttribute Flower flower) {
-		flower.setDate(new Date().toString());
 		flowerService.addFlower(flower);
 		return "redirect:/flower/list";
 	}

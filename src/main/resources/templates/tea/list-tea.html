@@ -138,80 +138,11 @@
 										th:text="${stock.totalStocks}"></small>
 								</div>
 							</div>
-
 						</div>
 					</div>
-
-					<!--<div class="nav-item dropdown">
-											<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"> <img
-													class="rounded-circle me-lg-2" src="images/fevicon.png" alt=""
-													style="width: 40px; height: 40px" /> <span class="d-none d-lg-inline-flex">Admin</span>
-											</a>
-											<div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-												<a href="#" class="dropdown-item">My Profile</a> <a href="#"
-													class="dropdown-item">Settings</a> <a href="/logout" class="dropdown-item">Log Out</a>
-											</div>
-										</div> -->
-
-
 				</div>
 			</nav>
-			<!-- Navbar End -->
-
-			<!-- Sale & Revenue Start -->
-			<!-- <div class="container-fluid pt-4 px-4">
-				<div class="row g-4">
-					<div class="col-sm-6 col-xl-3">
-						<div
-							class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
-							<i class="fa fa-wallet fa-3x text-primary"></i>
-							<div class="ms-3">
-								<p class="mb-2">Categories of Stocks</p>
-								<h6 class="mb-0" th:text="${totalStocks.size()}"></h6>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-6 col-xl-3">
-						<div
-							class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
-							<i class="fa fa-mug-hot fa-3x text-primary"></i>
-							<div class="ms-3">
-								<p class="mb-2">Total Teas</p>
-								<h6 class="mb-0" th:text="${totalTeas}"></h6>
-								<p>
-									<strong>Morning Teas Total Cups: </strong><span
-										th:text="${morningTeasTotal}"></span>
-								</p>
-								<p>
-									<strong>Evening Teas Total Cups: </strong><span
-										th:text="${eveningTeasTotal}"></span>
-								</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-6 col-xl-3">
-						<div
-							class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
-							<i class="fa fa-glass-whiskey fa-3x text-primary"></i>
-							<div class="ms-3">
-								<p class="mb-2">Total Jars</p>
-								<h6 class="mb-0" th:text="${totalWaterJars}"></h6>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-6 col-xl-3">
-						<div
-							class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
-							<i class="fa fa-calendar  fa-3x text-primary"></i>
-							<div class="ms-3">
-								<p class="mb-2">Today</p>
-								<h6 id="currentDate" class="mb-0"></h6>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div> -->
-			<!-- Sale & Revenue End -->
+			
 
 
 			<div class="container-fluid pt-4 px-4">
@@ -228,17 +159,12 @@
 										id="type" th:field="*{type}" required />
 								</div>
 
-								<!--  <div class="mb-3">
-                        <label for="date" class="form-label">Date</label>
-                        <input type="date" class="form-control" id="date" th:field="*{date}" required />
-                    </div> -->
-
 								<div class="mb-3">
 									<label for="totalTeaCups" class="form-label fw-bold fs-5 text-secondary">Total
 										Cups</label>
 									<input type="number"
 										class="form-control bg-white text-dark border-2 border-secondary shadow-sm fw-semibold fs-6 p-3"
-										id="totalTeaCups" th:field="*{totalTeaCups}" required />
+										id="totalTeaCups" th:field="*{totalTeaCups}" required min="1" step="1" />
 								</div>
 
 
@@ -291,72 +217,6 @@
 					</div>
 				</div>
 			</div>
-
-
-
-			<!-- <form id="stockForm" method="get">
-				Select Item
-				<div class="mb-3">
-					<label for="stockItem" class="form-label">Select Stock
-						Item:</label> <select id="stockItem" name="stockItemId"
-						class="form-control" required>
-						<option value="" disabled selected>Select an item</option>
-						<option th:each="item : ${totalStocks}" th:value="${item.id}"
-							th:text="${item.name}"></option>
-					</select>
-				</div>
-
-				Input Count
-				<div class="mb-3">
-					<label for="count" class="form-label">Enter Quantity:</label> <input
-						type="number" id="count" name="count" class="form-control" min="1"
-						required>
-				</div>
-
-				Submit Button
-				<button type="submit" class="btn btn-primary">Use Stock</button>
-
-				Back Link
-				<a href="/" class="btn btn-secondary">Back to Stock List</a>
-			</form>
-
-
-
-			<div class="container-fluid pt-4 px-4">
-    <div class="bg-secondary text-center rounded p-4" style="height: 450px; overflow: hidden;">
-        <div class="d-flex align-items-center justify-content-between mb-4">
-            <h6 class="mb-0">Current Stocks</h6>
-             <a href="">Show All</a>
-        </div>
-        <div class="table-responsive" style="max-height: 380px; overflow-y: auto;">
-            <table class="table text-start align-middle table-bordered table-hover mb-0">
-                <thead>
-                    <tr class="text-white">
-                        <th scope="col">Name</th>
-                        <th scope="col">Action</th>
-                        <th scope="col">Updated Date</th>
-                        <th scope="col">Old Stocks</th>
-                        <th scope="col">Current Stocks</th>
-                        <th scope="col">Issued Stocks</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr th:each="s : ${allStockHistories}">
-                        <td th:text="${s.stockItem.name}"></td>
-                        <td th:text="${s.action}"></td>
-                        <td th:text="${s.timestamp}"></td>
-                        <td th:text="${s.oldCount}"></td>
-                        <td th:text="${s.currentCount}"></td>
-                        <td th:text="${s.removedItem}"></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-</div>
-
- -->
-
 
 			<script>
 				document.getElementById("stockForm").addEventListener("submit", function (event) {

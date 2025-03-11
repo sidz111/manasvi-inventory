@@ -1,34 +1,3 @@
-<!-- <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <title>Water Jar Management</title>
-</head>
-<body>
-    <h1>Water Jar Management</h1>
-    <a th:href="@{/waterjar/add}">Add New Water Jar</a>
-    <table border="1">
-        <tr>
-            <th>ID</th>
-            <th>Owner</th>
-            <th>Total Jars</th>
-            <th>Date</th>
-            <th>Actions</th>
-        </tr>
-        <tr th:each="jar : ${waterJars}">
-            <td th:text="${jar.id}"></td>
-            <td th:text="${jar.jarOwner}"></td>
-            <td th:text="${jar.totalJars}"></td>
-            <td th:text="${jar.date}"></td>
-            <td>
-                <a th:href="@{/waterjar/edit/{id}(id=${jar.id})}">Edit</a> |
-                <a th:href="@{/waterjar/delete/{id}(id=${jar.id})}">Delete</a>
-            </td>
-        </tr>
-    </table>
-</body>
-</html>
- -->
-
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
@@ -187,63 +156,7 @@
 
 				</div>
 			</nav>
-			<!-- Navbar End -->
-
-			<!-- Sale & Revenue Start -->
-			<!-- <div class="container-fluid pt-4 px-4">
-				<div class="row g-4">
-					<div class="col-sm-6 col-xl-3">
-						<div
-							class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
-							<i class="fa fa-wallet fa-3x text-primary"></i>
-							<div class="ms-3">
-								<p class="mb-2">Categories of Stocks</p>
-								<h6 class="mb-0" th:text="${totalStocks.size()}"></h6>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-6 col-xl-3">
-						<div
-							class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
-							<i class="fa fa-mug-hot fa-3x text-primary"></i>
-							<div class="ms-3">
-								<p class="mb-2">Total Teas</p>
-								<h6 class="mb-0" th:text="${totalTeas}"></h6>
-								<p>
-									<strong>Morning Cups: </strong><span
-										th:text="${morningTeasTotal}"></span>
-								</p>
-								<p>
-									<strong>Evening Cups: </strong><span
-										th:text="${eveningTeasTotal}"></span>
-								</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-6 col-xl-3">
-						<div
-							class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
-							<i class="fa fa-glass-whiskey fa-3x text-primary"></i>
-							<div class="ms-3">
-								<p class="mb-2">Total Jars</p>
-								<h6 class="mb-0" th:text="${totalWaterJars}"></h6>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-6 col-xl-3">
-						<div
-							class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
-							<i class="fa fa-calendar  fa-3x text-primary"></i>
-							<div class="ms-3">
-								<p class="mb-2">Today</p>
-								<h6 id="currentDate" class="mb-0"></h6>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div> -->
-			<!-- Sale & Revenue End -->
-
+			
 
 			<div class="container-fluid pt-4 px-4">
 				<div class="row g-4">
@@ -263,14 +176,15 @@
 									<label for="totalJars" class="form-label fw-bold fs-5 text-secondary">Total
 										Jars</label> <input type="number"
 										class="form-control bg-white text-dark border-2 border-secondary shadow-sm fw-semibold fs-6 p-3"
-										id="totalJars" th:field="*{totalJars}" required />
+										id="totalJars" th:field="*{totalJars}" min="1" step="1" required />
+								</div>
+								
+								<div class="mb-3">
+									<label for="date" class="form-label fw-bold fs-5 text-secondary">Date</label> <input type="date"
+										class="form-control bg-white text-dark border-2 border-secondary shadow-sm fw-semibold fs-6 p-3"
+										id="date" th:field="*{date}" required />
 								</div>
 
-								<!-- <div class="mb-3">
-									<label for="date" class="form-label">Date</label> <input
-										type="date" class="form-control" id="date" th:field="*{date}"
-										required />
-								</div> -->
 
 								<div class="d-flex justify-content-center mt-3">
 									<button type="submit" class="btn btn-primary fw-bold px-4 py-2 fs-5 shadow">Add
@@ -348,8 +262,6 @@
 
 			</script>
 
-			<!-- Back to Top -->
-			<a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
 		</div>
 
 		<!-- JavaScript Libraries -->

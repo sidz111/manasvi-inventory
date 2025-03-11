@@ -39,7 +39,6 @@ public class WaterJarController {
 
     @PostMapping("/save")
     public String saveWaterJar(@ModelAttribute WaterJar waterJar) {
-    	waterJar.setDate(new Date().toString());
         waterJarService.addWaterJar(waterJar);
         return "redirect:/waterjar";
     }

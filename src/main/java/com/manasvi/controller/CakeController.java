@@ -34,7 +34,6 @@ public class CakeController {
 	
 	@PostMapping("/add")
 	public String addCake(@ModelAttribute Cake cake) {
-		cake.setDate(new Date().toString());
 		cakeService.addCake(cake);
 		return "redirect:/cakes/list";
 	}
