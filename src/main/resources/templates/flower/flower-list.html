@@ -8,7 +8,7 @@
 <meta content="" name="description" />
 
 <!-- Favicon -->
-<link href="/images/Manasvi.png" rel="icon" />
+<link href="../images/fevicon.png" rel="icon" />
 
 <!-- Google Web Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -52,30 +52,20 @@
 
 		<!-- Sidebar Start -->
 		<div class="sidebar pe-4 pb-3">
-			<nav class="navbar bg-secondary navbar-dark">
+			<nav class="navbar bg-white text-dark">
 				<a href="/" class="navbar-brand mx-4 mb-3">
 					<h3 class="text-primary">
-						<i class="fa fa-user-edit me-2"></i>Manasvi
+						<img class="" src="../images/Manasvi.png" alt=""
+							style="width: 100%; height: 60%" />
 					</h3>
 				</a>
-				<div class="d-flex align-items-center ms-4 mb-4">
-					<div class="position-relative">
-						<img class="rounded-circle" src="/images/Manasvi.png" alt=""
-							style="width: 40px; height: 40px" />
-						<div
-							class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
-					</div>
-					<div class="ms-3">
-						<h6 class="mb-0">Manasvi</h6>
-						<span>Admin</span>
-					</div>
-				</div>
+
 				<div class="navbar-nav w-100">
-					<a href="/" class="nav-item nav-link active"><i
-						class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+					<a href="/" class="nav-item nav-link"><i
+						class="fa fa-home fs-4 me-2"></i>Dashboard</a>
 					<div class="nav-item dropdown">
 						<a href="#" class="nav-link dropdown-toggle"
-							data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Stocks</a>
+							data-bs-toggle="dropdown"><i class="fas fa-wallet fs-4 me-2"></i>Stocks</a>
 						<div class="dropdown-menu bg-transparent border-0">
 							<a href="/stock/add" class="dropdown-item">Add Stocks</a> <a
 								href="/stock/list" class="dropdown-item">List of Stocks</a>
@@ -86,35 +76,38 @@
 
 					<div class="nav-item dropdown">
 						<a href="#" class="nav-link dropdown-toggle"
-							data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Tea
-							Secotion</a>
+							data-bs-toggle="dropdown"><i class="fas fa-mug-hot fs-4 me-2"></i>Tea
+							Section</a>
 						<div class="dropdown-menu bg-transparent border-0">
 							<a href="/tea" class="dropdown-item">About Tea's</a>
 						</div>
 					</div>
 
+
+
+
 					<div class="nav-item dropdown">
 						<a href="#" class="nav-link dropdown-toggle"
-							data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Jars
-							Section</a>
+							data-bs-toggle="dropdown"><i
+							class="fas fa-glass-whiskey fs-4 me-2"></i>Jars Section</a>
 						<div class="dropdown-menu bg-transparent border-0">
-							<a href="/waterjar" class="dropdown-item">About Jars</a>
+							<a href="/waterjar" class="dropdown-item">About Jar's</a>
 						</div>
 					</div>
 
 					<div class="nav-item dropdown">
 						<a href="#" class="nav-link dropdown-toggle"
-							data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Flower
-							Secotion</a>
+							data-bs-toggle="dropdown"><i class="fa fa-spa fs-4 me-2"></i>Flower
+							Section</a>
 						<div class="dropdown-menu bg-transparent border-0">
 							<a href="/flower/list" class="dropdown-item">About Flower's</a>
 						</div>
 					</div>
-					
+
 					<div class="nav-item dropdown">
 						<a href="#" class="nav-link dropdown-toggle"
-							data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Cakes
-							Secotion</a>
+							data-bs-toggle="dropdown"><i
+							class="fa fa-birthday-cake fs-4 me-2"></i>Cakes Section</a>
 						<div class="dropdown-menu bg-transparent border-0">
 							<a href="/cakes/list" class="dropdown-item">About Cake's</a>
 						</div>
@@ -126,8 +119,8 @@
 		<!-- Content Start -->
 		<div class="content">
 			<!-- Navbar Start -->
-			<nav
-				class="navbar navbar-expand bg-secondary navbar-dark sticky-top px-4 py-0">
+			<nav class="navbar navbar-expand navbar-dark sticky-top px-4 py-0"
+				style="background-color: #008bf9;">
 				<a href="/" class="navbar-brand d-flex d-lg-none me-4">
 					<h2 class="text-primary mb-0">
 						<i class="fa fa-user-edit"></i>
@@ -136,22 +129,23 @@
 					class="fa fa-bars"></i>
 				</a>
 				<!-- <form class="d-none d-md-flex ms-4">
-					<input class="form-control bg-dark border-0" type="search"
-						placeholder="Search" />
-				</form> -->
-				<h2 class="ms-5 text-danger">Manasvi Inventory System</h2>
+												<input class="form-control bg-dark border-0" type="search"
+													placeholder="Search" />
+											</form> -->
+				<h2 class="ms-5 text-blue">Manasvi Inventory System</h2>
 				<div class="navbar-nav align-items-center ms-auto">
 					<div class="nav-item dropdown">
 						<a href="#" class="nav-link dropdown-toggle"
-							data-bs-toggle="dropdown"> <i class="fa fa-bell me-lg-2"></i>
-							<span class="d-none d-lg-inline-flex">Notification</span>
+							data-bs-toggle="dropdown"> <i
+							class="text-danger fa fa-bell me-lg-2"></i> <span
+							class="d-none d-lg-inline-flex">Notification</span>
 						</a>
 						<div
-							class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
+							class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
 							<!-- Loop over totalStocks to display each stock item -->
 							<div class="text-warning d-flex flex-wrap">
 								<div th:each="stock : ${totalStocks}"
-									class="d-flex align-items-center me-4">
+									class="d-flex align-items-center mx-auto">
 									<!-- Increased margin-right -->
 									<strong th:if="${stock.totalStocks} < 10"
 										th:text="${stock.name}"></strong> <small class="ms-2"
@@ -163,20 +157,18 @@
 						</div>
 					</div>
 
-					<div class="nav-item dropdown">
-						<a href="#" class="nav-link dropdown-toggle"
-							data-bs-toggle="dropdown"> <img
-							class="rounded-circle me-lg-2" src="/images/Manasvi.png" alt=""
-							style="width: 40px; height: 40px" /> <span
-							class="d-none d-lg-inline-flex">Admin</span>
-						</a>
-						<div
-							class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
-							<a href="#" class="dropdown-item">My Profile</a> <a href="#"
-								class="dropdown-item">Settings</a> <a href="/logout"
-								class="dropdown-item">Log Out</a>
-						</div>
-					</div>
+					<!--<div class="nav-item dropdown">
+													<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"> <img
+															class="rounded-circle me-lg-2" src="images/fevicon.png" alt=""
+															style="width: 40px; height: 40px" /> <span class="d-none d-lg-inline-flex">Admin</span>
+													</a>
+													<div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
+														<a href="#" class="dropdown-item">My Profile</a> <a href="#"
+															class="dropdown-item">Settings</a> <a href="/logout" class="dropdown-item">Log Out</a>
+													</div>
+												</div> -->
+
+
 				</div>
 			</nav>
 			<!-- Navbar End -->
@@ -241,46 +233,45 @@
 				<div class="row g-4">
 					<!-- Form Section (Left Side) -->
 					<div class="col-sm-12 col-xl-6">
-						<div class="bg-secondary rounded h-100 p-4">
-							<h6 class="mb-4 text-center">Today's Flowers</h6>
+						<div class="bg-white text-dark rounded-4 shadow-lg p-4 card-hover">
+							<h6 class="mb-4 text-dark fw-bold fs-3 text-center">Today's Flowers</h6>
 							<form th:action="@{/flower/add}" method="post"
-								th:object="${flower}">
+								th:object="${flower}" >
 								<div class="mb-3">
-									<label for="count" class="form-label">Count</label> <input
-										type="number" class="form-control" id="count"
+									<label for="count" class="form-label fw-bold fs-5 text-secondary">Count</label> <input
+										type="number" class="form-control bg-white text-dark border-2 border-secondary shadow-sm fw-semibold fs-6 p-3" id="count"
 										th:field="*{count}" required />
 								</div>
 								<div class="d-flex justify-content-center">
-									<button type="submit" class="btn btn-primary">Add</button>
+									<button type="submit" class="btn btn-primary fw-bold px-4 py-2 fs-5 shadow">Add Flowers</button>
 								</div>
 							</form>
 						</div>
 					</div>
 
-					<!-- Tea Statistics Section (Right Side) -->
+					<!-- Flower Statistics Section (Right Side) -->
 					<div class="col-sm-12 col-xl-6">
-						<div class="bg-secondary text-center rounded p-4"
+						<div class="bg-white text-dark rounded-4 shadow-lg p-4 card-hover"
 							style="height: 400px; overflow: hidden;">
-							<div
-								class="d-flex align-items-center justify-content-between mb-4">
-								<h6 class="mb-0">Flower Statistics</h6>
-							</div>
+							
+								<h6 class="mb-4 text-dark fw-bold fs-3 text-center">Flower Statistics</h6>
+								
 							<div class="table-responsive"
-								style="max-height: 320px; overflow-y: auto;">
+								style="height: 387px; overflow-y: auto;">
 								<table
-									class="table text-start align-middle table-bordered table-hover mb-0">
-									<thead>
+									class="table text-center align-middle table-bordered table-hover shadow-sm">
+									<thead class="bg-secondary text-white">
 										<tr class="text-white">
-											<th scope="col">ID</th>
-											<th scope="col">Date</th>
-											<th scope="col">Count</th>
+											<th scope="col" class="fw-bold fs-5">ID</th>
+											<th scope="col" class="fw-bold fs-5">Date</th>
+											<th scope="col" class="fw-bold fs-5">Count</th>
 										</tr>
 									</thead>
 									<tbody>
-										<tr th:each="f : ${flowers}">
-											<td th:text="${f.id}"></td>
-											<td th:text="${f.date}"></td>
-											<td th:text="${f.count}"></td>
+										<tr th:each="f : ${flowers}" class="fw-semibold fs-6 text-dark">
+											<td th:text="${f.id}" class="p-3"></td>
+											<td th:text="${f.date}" class="p-3"></td>
+											<td th:text="${f.count}" class="p-3"></td>
 										</tr>
 									</tbody>
 								</table>
