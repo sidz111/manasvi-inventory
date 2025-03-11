@@ -136,6 +136,15 @@
 						</div>
 					</div>
 			</nav>
+			
+			<!-- Logout button at the bottom -->
+			<div class="logout-btn-container">
+				<button type="button"
+					class="btn logout-btn fw-bold px-2 py-2 fs-5 shadow">
+					<i class="fas fa-sign-out-alt me-2"></i> Logout
+				</button>
+			</div>
+			
 		</div>
 		<!-- Sidebar End -->
 
@@ -144,11 +153,7 @@
 			<!-- Navbar Start -->
 			<nav class="navbar navbar-expand navbar-dark sticky-top px-4 py-0"
 				style="background-color: #008bf9;">
-				<a href="/" class="navbar-brand d-flex d-lg-none me-4">
-					<h2 class="text-primary mb-0">
-						<i class="fa fa-user-edit"></i>
-					</h2>
-				</a> <a href="#" class="sidebar-toggler flex-shrink-0"> <i
+				<a href="#" class="sidebar-toggler flex-shrink-0"> <i
 					class="fa fa-bars"></i>
 				</a>
 				<h2 class="ms-5 text-blue">Manasvi Inventory System</h2>
@@ -159,18 +164,20 @@
 							class="text-danger fa fa-bell me-lg-2"></i> <span
 							class="d-none d-lg-inline-flex">Notification</span>
 						</a>
+
 						<div
-							class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
+							class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0 p-3">
 							<!-- Loop over totalStocks to display each stock item -->
-							<div class="text-warning d-flex flex-wrap">
-								<div th:each="stock : ${totalStocks}"
-									class="d-flex align-items-center mx-auto">
-									<!-- Increased margin-right -->
-									<strong th:if="${stock.totalStocks} < 10"
-										th:text="${stock.name}"></strong> <small class="ms-2"
-										th:if="${stock.totalStocks} < 10"
-										th:text="${stock.totalStocks}"></small>
-								</div>
+							<div th:each="stock : ${totalStocks}"
+								th:if="${stock.totalStocks} < 10"
+								class="d-flex align-items-center justify-content-between p-2 border-bottom border-white">
+
+								<!-- Stock Name -->
+								<strong class="text-white me-2" th:text="${stock.name}"></strong>
+
+								<!-- Stock Count -->
+								<span class="badge bg-danger text-white fs-6"
+									th:text="${stock.totalStocks}"></span>
 							</div>
 						</div>
 					</div>
