@@ -3,35 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manasvi Inventory</title>
+    <title>Manasvi Inventory - Login</title>
+    
     <link rel="stylesheet" href="../css/login.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    <link href="images/fevicon.png" rel="icon" />
+    <link href="images/favicon.png" rel="icon">
 </head>
 <body>
+
     <div class="login-container">
-        <!-- Display error message if login fails -->
+        <!-- Error Message (If Login Fails) -->
         <th:block th:if="${param.error}">
             <div id="error-message" class="error-message">
-                <p>❌ Incorrect Email or Password</p>
+                Incorrect Email or Password
             </div>
         </th:block>
 
+        <!-- Login Form -->
         <form action="/login" method="post" class="sign-in-form">
-            <h2 class="title">Sign In</h2>
+            <h2 class="title">Login</h2>
+            
             <div class="input-field">
-                <i class="fas fa-user"></i>
-                <input class="input" type="email" name="username" placeholder="Enter Email" required />
+                <label>Email</label>
+                <input class="input" type="email" name="username" required>
             </div>
+            
             <div class="input-field">
-                <i class="fas fa-lock"></i>
-                <input class="input" type="password" name="password" placeholder="Password" required />
+                <label>Password</label>
+                <input class="input" type="password" name="password" required>
             </div>
-            <input type="submit" value="Login" class="btn solid" />
+
+            <button type="submit" class="btn">Login</button>
         </form>
     </div>
 
-    <!-- JavaScript to hide error message after 3 seconds -->
+    <!-- JavaScript to Hide Error Message After 3 Seconds -->
     <script>
         setTimeout(function() {
             let errorMsg = document.getElementById("error-message");
@@ -40,5 +46,6 @@
             }
         }, 3000);
     </script>
+
 </body>
 </html>

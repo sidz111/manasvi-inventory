@@ -43,6 +43,8 @@ public class SecurityConfiguration {
 		.authenticated()
 		.requestMatchers("/css/login.css")
 		.permitAll()
+		.requestMatchers("/images/manasvi-bg.jpg")
+		.permitAll()
 		.anyRequest()
 		.authenticated()
 		.and()
