@@ -55,26 +55,28 @@
 			<nav class="navbar bg-white text-dark">
 				<a href="/" class="navbar-brand mx-4 mb-3">
 					<h3 class="text-primary">
-						<img class="" src="../images/Manasvi.png" alt="" style="width:100%; height: 60%" />
+						<img class="" src="../images/Manasvi.png" alt=""
+							style="width: 100%; height: 60%" />
 					</h3>
 				</a>
 
 				<div class="navbar-nav w-100">
-					<a href="/" class="nav-item nav-link"><i class="fa fa-home fs-4 me-2"></i>Dashboard</a>
+					<a href="/" class="nav-item nav-link"><i
+						class="fa fa-home fs-4 me-2"></i>Dashboard</a>
 					<div class="nav-item dropdown">
-						<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i
-								class="fas fa-wallet fs-4 me-2"></i>Stocks</a>
+						<a href="#" class="nav-link dropdown-toggle"
+							data-bs-toggle="dropdown"><i class="fas fa-wallet fs-4 me-2"></i>Stocks</a>
 						<div class="dropdown-menu bg-transparent border-0">
-							<a href="/stock/add" class="dropdown-item">Add Stocks</a> <a href="/stock/list"
-								class="dropdown-item">List of Stocks</a>
+							<a href="/stock/add" class="dropdown-item">Add Stocks</a> <a
+								href="/stock/list" class="dropdown-item">List of Stocks</a>
 						</div>
 					</div>
 
 
 
 					<div class="nav-item dropdown">
-						<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i
-								class="fas fa-mug-hot fs-4 me-2"></i>Tea
+						<a href="#" class="nav-link dropdown-toggle"
+							data-bs-toggle="dropdown"><i class="fas fa-mug-hot fs-4 me-2"></i>Tea
 							Section</a>
 						<div class="dropdown-menu bg-transparent border-0">
 							<a href="/tea" class="dropdown-item">About Tea's</a>
@@ -85,17 +87,17 @@
 
 
 					<div class="nav-item dropdown">
-						<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i
-								class="fas fa-glass-whiskey fs-4 me-2"></i>Jars
-							Section</a>
+						<a href="#" class="nav-link dropdown-toggle"
+							data-bs-toggle="dropdown"><i
+							class="fas fa-glass-whiskey fs-4 me-2"></i>Jars Section</a>
 						<div class="dropdown-menu bg-transparent border-0">
 							<a href="/waterjar" class="dropdown-item">About Jar's</a>
 						</div>
 					</div>
 
 					<div class="nav-item dropdown">
-						<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i
-								class="fa fa-spa fs-4 me-2"></i>Flower
+						<a href="#" class="nav-link dropdown-toggle"
+							data-bs-toggle="dropdown"><i class="fa fa-spa fs-4 me-2"></i>Flower
 							Section</a>
 						<div class="dropdown-menu bg-transparent border-0">
 							<a href="/flower/list" class="dropdown-item">About Flower's</a>
@@ -103,26 +105,33 @@
 					</div>
 
 					<div class="nav-item dropdown">
-						<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i
-								class="fa fa-birthday-cake fs-4 me-2"></i>Cakes
-							Section</a>
+						<a href="#" class="nav-link dropdown-toggle"
+							data-bs-toggle="dropdown"><i
+							class="fa fa-birthday-cake fs-4 me-2"></i>Cakes Section</a>
 						<div class="dropdown-menu bg-transparent border-0">
 							<a href="/cakes/list" class="dropdown-item">About Cake's</a>
 						</div>
 					</div>
 			</nav>
+			
+				<!-- Logout Button -->
+			<div class="logout-btn-container">
+				<a href="/logout"
+					class="btn logout-btn fw-bold px-3 py-2 fs-5 shadow"> <i
+					class="fas fa-sign-out-alt me-2"></i> Logout
+				</a>
+			</div>
+			
 		</div>
 		<!-- Sidebar End -->
 
 		<!-- Content Start -->
 		<div class="content">
 			<!-- Navbar Start -->
-			<nav class="navbar navbar-expand navbar-dark sticky-top px-4 py-0" style="background-color: #008bf9;">
-				<a href="/" class="navbar-brand d-flex d-lg-none me-4">
-					<h2 class="text-primary mb-0">
-						<i class="fa fa-user-edit"></i>
-					</h2>
-				</a> <a href="#" class="sidebar-toggler flex-shrink-0"> <i class="fa fa-bars"></i>
+			<nav class="navbar navbar-expand navbar-dark sticky-top px-4 py-0"
+				style="background-color: #008bf9;">
+				<a href="#" class="sidebar-toggler flex-shrink-0"> <i
+					class="fa fa-bars"></i>
 				</a>
 				<!-- <form class="d-none d-md-flex ms-4">
 												<input class="form-control bg-dark border-0" type="search"
@@ -131,21 +140,26 @@
 				<h2 class="ms-5 text-blue">Manasvi Inventory System</h2>
 				<div class="navbar-nav align-items-center ms-auto">
 					<div class="nav-item dropdown">
-						<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"> <i
-								class="text-danger fa fa-bell me-lg-2"></i>
-							<span class="d-none d-lg-inline-flex">Notification</span>
+						<a href="#" class="nav-link dropdown-toggle"
+							data-bs-toggle="dropdown"> <i
+							class="text-danger fa fa-bell me-lg-2"></i> <span
+							class="d-none d-lg-inline-flex">Notification</span>
 						</a>
-						<div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-							<!-- Loop over totalStocks to display each stock item -->
-							<div class="text-warning d-flex flex-wrap">
-								<div th:each="stock : ${totalStocks}" class="d-flex align-items-center mx-auto">
-									<!-- Increased margin-right -->
-									<strong th:if="${stock.totalStocks} < 10" th:text="${stock.name}"></strong> <small
-										class="ms-2" th:if="${stock.totalStocks} < 10"
-										th:text="${stock.totalStocks}"></small>
-								</div>
-							</div>
 
+						<div
+							class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0 p-3">
+							<!-- Loop over totalStocks to display each stock item -->
+							<div th:each="stock : ${totalStocks}"
+								th:if="${stock.totalStocks} < 10"
+								class="d-flex align-items-center justify-content-between p-2 border-bottom border-white">
+
+								<!-- Stock Name -->
+								<strong class="text-white me-2" th:text="${stock.name}"></strong>
+
+								<!-- Stock Count -->
+								<span class="badge bg-danger text-white fs-6"
+									th:text="${stock.totalStocks}"></span>
+							</div>
 						</div>
 					</div>
 
@@ -154,37 +168,39 @@
 					<!-- Form Section (Left Side) -->
 					<div class="col-sm-12 col-xl-6">
 						<div class="bg-white text-dark rounded-4 shadow-lg p-4 card-hover">
-							<h6 class="mb-1 text-dark fw-bold fs-3 text-center">Today's Cakes</h6>
-							<form th:action="@{/cakes/add}" method="post"
-								th:object="${cake}">
-								
-								<div class="mb-1">
-									<label for="count" class="form-label fw-bold fs-5 text-secondary">Count</label> <input
-										type="number" class="form-control bg-white text-dark border-1 border-secondary shadow-sm fw-semibold fs-6 p-3" id="count"
-										th:field="*{count}" required min="1" step="1" />
+							<h6 class="mb-4 text-dark fw-bold fs-3 text-center">Today's
+								Cakes</h6>
+							<form th:action="@{/cakes/add}" method="post" th:object="${cake}">
+
+								<div class="mb-3">
+									<label for="count"
+										class="form-label fw-bold fs-5 text-secondary">Count</label> <input
+										type="number"
+										class="form-control bg-white text-dark border-2 border-secondary shadow-sm fw-semibold fs-6 p-3"
+										id="count" th:field="*{count}" required />
 								</div>
-								
-								<div class="mb-1">
-									<label for="date" class="form-label fw-bold fs-5 text-secondary">Date</label> <input
-										type="date" class="form-control bg-white text-dark border-1 border-secondary shadow-sm fw-semibold fs-6 p-3" id="date"
-										th:field="*{date}" required />
+
+
+								<div class="mb-3">
+									<label for="forWho"
+										class="form-label fw-bold fs-5 text-secondary">For
+										Whom</label> <input type="text"
+										class="form-control bg-white text-dark border-2 border-secondary shadow-sm fw-semibold fs-6 p-3"
+										id="forWho" th:field="*{forWho}" required />
 								</div>
-								
-								
-								<div class="mb-1">
-									<label for="forWho" class="form-label fw-bold fs-5 text-secondary">For Whom</label> <input
-										type="text" class="form-control bg-white text-dark border-1 border-secondary shadow-sm fw-semibold fs-6 p-3" id="forWho"
-										th:field="*{forWho}" required />
-								</div>
-								
-								
-								<div class="mb-1">
-									<label for="price" class="form-label fw-bold fs-5 text-secondary">Price</label> <input
-										type="text" class="form-control bg-white text-dark border-1 border-secondary shadow-sm fw-semibold fs-6 p-3" id="price"
-										th:field="*{price}" required />
+
+
+								<div class="mb-3">
+									<label for="price"
+										class="form-label fw-bold fs-5 text-secondary">Price</label> <input
+										type="text"
+										class="form-control bg-white text-dark border-2 border-secondary shadow-sm fw-semibold fs-6 p-3"
+										id="price" th:field="*{price}" required />
 								</div>
 								<div class="d-flex justify-content-center">
-									<button type="submit" class="btn btn-primary fw-bold px-4 py-2 fs-5 shadow">Add Cake</button>
+									<button type="submit"
+										class="btn btn-primary fw-bold px-4 py-2 fs-5 shadow">Add
+										Cake</button>
 								</div>
 							</form>
 						</div>
@@ -192,11 +208,13 @@
 
 					<!-- Tea Statistics Section (Right Side) -->
 					<div class="col-sm-12 col-xl-6">
-						<div class="bg-white text-dark rounded-4 shadow-lg p-4 card-hover"	>
-							
-								<h6 class="mb-4 text-dark fw-bold fs-3 text-center">Cakes Statistics</h6>
-							
-							<div class="table-responsive" style=" height: 425px; overflow-y: auto;">
+						<div class="bg-white text-dark rounded-4 shadow-lg p-4 card-hover">
+
+							<h6 class="mb-4 text-dark fw-bold fs-3 text-center">Cakes
+								Statistics</h6>
+
+							<div class="table-responsive"
+								style="height: 387px; overflow-y: auto;">
 								<table
 									class="table text-center align-middle table-bordered table-hover shadow-sm">
 									<thead class="bg-secondary text-white">

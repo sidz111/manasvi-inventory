@@ -2,34 +2,41 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-	<meta charset="utf-8" />
-	<title>Manasvi inventory</title>
-	<meta content="width=device-width, initial-scale=1.0" name="viewport" />
-	<meta content="" name="keywords" />
-	<meta content="" name="description" />
+<meta charset="utf-8" />
+<title>Manasvi inventory</title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+<meta content="" name="keywords" />
+<meta content="" name="description" />
 
-	<!-- Favicon -->
-	<link href="../images/fevicon.png" rel="icon" />
+<!-- Favicon -->
+<link href="../images/fevicon.png" rel="icon" />
 
-	<!-- Google Web Fonts -->
-	<link rel="preconnect" href="https://fonts.googleapis.com" />
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700&display=swap"
-		rel="stylesheet" />
+<!-- Google Web Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+	href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700&display=swap"
+	rel="stylesheet" />
 
-	<!-- Icon Font Stylesheet -->
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet" />
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+<!-- Icon Font Stylesheet -->
+<link
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+	rel="stylesheet" />
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+	rel="stylesheet" />
 
-	<!-- Libraries Stylesheet -->
-	<link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
-	<link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+<!-- Libraries Stylesheet -->
+<link href="lib/owlcarousel/assets/owl.carousel.min.css"
+	rel="stylesheet" />
+<link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css"
+	rel="stylesheet" />
 
-	<!-- Customized Bootstrap Stylesheet -->
-	<link href="css/bootstrap.min.css" rel="stylesheet" />
+<!-- Customized Bootstrap Stylesheet -->
+<link href="css/bootstrap.min.css" rel="stylesheet" />
 
-	<!-- Template Stylesheet -->
-	<link href="css/style.css" rel="stylesheet" />
+<!-- Template Stylesheet -->
+<link href="css/style.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -37,7 +44,8 @@
 		<!-- Spinner Start -->
 		<div id="spinner"
 			class="show bg-dark position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-			<div class="spinner-border text-primary" style="width: 3rem; height: 3rem" role="status">
+			<div class="spinner-border text-primary"
+				style="width: 3rem; height: 3rem" role="status">
 				<span class="sr-only">Loading...</span>
 			</div>
 		</div>
@@ -48,26 +56,28 @@
 			<nav class="navbar bg-white text-dark">
 				<a href="/" class="navbar-brand mx-4 mb-3">
 					<h3 class="text-primary">
-						<img class="" src="../images/Manasvi.png" alt="" style="width:100%; height: 60%" />
+						<img class="" src="../images/Manasvi.png" alt=""
+							style="width: 100%; height: 60%" />
 					</h3>
 				</a>
 
 				<div class="navbar-nav w-100">
-					<a href="/" class="nav-item nav-link"><i class="fa fa-home fs-4 me-2"></i>Dashboard</a>
+					<a href="/" class="nav-item nav-link"><i
+						class="fa fa-home fs-4 me-2"></i>Dashboard</a>
 					<div class="nav-item dropdown">
-						<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i
-								class="fas fa-wallet fs-4 me-2"></i>Stocks</a>
+						<a href="#" class="nav-link dropdown-toggle"
+							data-bs-toggle="dropdown"><i class="fas fa-wallet fs-4 me-2"></i>Stocks</a>
 						<div class="dropdown-menu bg-transparent border-0">
-							<a href="/stock/add" class="dropdown-item">Add Stocks</a> <a href="/stock/list"
-								class="dropdown-item">List of Stocks</a>
+							<a href="/stock/add" class="dropdown-item">Add Stocks</a> <a
+								href="/stock/list" class="dropdown-item">List of Stocks</a>
 						</div>
 					</div>
 
 
 
 					<div class="nav-item dropdown">
-						<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i
-								class="fas fa-mug-hot fs-4 me-2"></i>Tea
+						<a href="#" class="nav-link dropdown-toggle"
+							data-bs-toggle="dropdown"><i class="fas fa-mug-hot fs-4 me-2"></i>Tea
 							Section</a>
 						<div class="dropdown-menu bg-transparent border-0">
 							<a href="/tea" class="dropdown-item">About Tea's</a>
@@ -78,17 +88,17 @@
 
 
 					<div class="nav-item dropdown">
-						<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i
-								class="fas fa-glass-whiskey fs-4 me-2"></i>Jars
-							Section</a>
+						<a href="#" class="nav-link dropdown-toggle"
+							data-bs-toggle="dropdown"><i
+							class="fas fa-glass-whiskey fs-4 me-2"></i>Jars Section</a>
 						<div class="dropdown-menu bg-transparent border-0">
 							<a href="/waterjar" class="dropdown-item">About Jar's</a>
 						</div>
 					</div>
 
 					<div class="nav-item dropdown">
-						<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i
-								class="fa fa-spa fs-4 me-2"></i>Flower
+						<a href="#" class="nav-link dropdown-toggle"
+							data-bs-toggle="dropdown"><i class="fa fa-spa fs-4 me-2"></i>Flower
 							Section</a>
 						<div class="dropdown-menu bg-transparent border-0">
 							<a href="/flower/list" class="dropdown-item">About Flower's</a>
@@ -96,26 +106,33 @@
 					</div>
 
 					<div class="nav-item dropdown">
-						<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i
-								class="fa fa-birthday-cake fs-4 me-2"></i>Cakes
-							Section</a>
+						<a href="#" class="nav-link dropdown-toggle"
+							data-bs-toggle="dropdown"><i
+							class="fa fa-birthday-cake fs-4 me-2"></i>Cakes Section</a>
 						<div class="dropdown-menu bg-transparent border-0">
 							<a href="/cakes/list" class="dropdown-item">About Cake's</a>
 						</div>
 					</div>
 			</nav>
+			
+				<!-- Logout Button -->
+			<div class="logout-btn-container">
+				<a href="/logout"
+					class="btn logout-btn fw-bold px-3 py-2 fs-5 shadow"> <i
+					class="fas fa-sign-out-alt me-2"></i> Logout
+				</a>
+			</div>
+			
 		</div>
 		<!-- Sidebar End -->
 
 		<!-- Content Start -->
 		<div class="content">
 			<!-- Navbar Start -->
-			<nav class="navbar navbar-expand navbar-dark sticky-top px-4 py-0" style="background-color: #008bf9;">
-				<a href="/" class="navbar-brand d-flex d-lg-none me-4">
-					<h2 class="text-primary mb-0">
-						<i class="fa fa-user-edit"></i>
-					</h2>
-				</a> <a href="#" class="sidebar-toggler flex-shrink-0"> <i class="fa fa-bars"></i>
+			<nav class="navbar navbar-expand navbar-dark sticky-top px-4 py-0"
+				style="background-color: #008bf9;">
+				 <a href="#" class="sidebar-toggler flex-shrink-0"> <i
+					class="fa fa-bars"></i>
 				</a>
 				<!-- <form class="d-none d-md-flex ms-4">
 										<input class="form-control bg-dark border-0" type="search"
@@ -124,19 +141,25 @@
 				<h2 class="ms-5 text-blue">Manasvi Inventory System</h2>
 				<div class="navbar-nav align-items-center ms-auto">
 					<div class="nav-item dropdown">
-						<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"> <i
-								class="text-danger fa fa-bell me-lg-2"></i>
-							<span class="d-none d-lg-inline-flex">Notification</span>
+						<a href="#" class="nav-link dropdown-toggle"
+							data-bs-toggle="dropdown"> <i
+							class="text-danger fa fa-bell me-lg-2"></i> <span
+							class="d-none d-lg-inline-flex">Notification</span>
 						</a>
-						<div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
+
+						<div
+							class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0 p-3">
 							<!-- Loop over totalStocks to display each stock item -->
-							<div class="text-warning d-flex flex-wrap">
-								<div th:each="stock : ${totalStocks}" class="d-flex align-items-center mx-auto">
-									<!-- Increased margin-right -->
-									<strong th:if="${stock.totalStocks} < 10" th:text="${stock.name}"></strong> <small
-										class="ms-2" th:if="${stock.totalStocks} < 10"
-										th:text="${stock.totalStocks}"></small>
-								</div>
+							<div th:each="stock : ${totalStocks}"
+								th:if="${stock.totalStocks} < 10"
+								class="d-flex align-items-center justify-content-between p-2 border-bottom border-white">
+
+								<!-- Stock Name -->
+								<strong class="text-white me-2" th:text="${stock.name}"></strong>
+
+								<!-- Stock Count -->
+								<span class="badge bg-danger text-white fs-6"
+									th:text="${stock.totalStocks}"></span>
 							</div>
 						</div>
 					</div>
@@ -150,26 +173,29 @@
 					<!-- Form Section (Left Side) -->
 					<div class="col-sm-12 col-xl-6">
 						<div class="bg-white text-dark rounded-4 shadow-lg p-4 card-hover">
-							<h6 class="mb-4 text-dark fw-bold fs-3 text-center">Today's Tea</h6>
+							<h6 class="mb-4 text-dark fw-bold fs-3 text-center">Today's
+								Tea</h6>
 							<form th:action="@{/tea/save}" method="post" th:object="${tea}">
 								<div class="mb-3">
-									<label for="type" class="form-label fw-bold fs-5 text-secondary">Type</label> <input
+									<label for="type"
+										class="form-label fw-bold fs-5 text-secondary">Type</label> <input
 										type="text"
 										class="form-control bg-white text-dark border-2 border-secondary shadow-sm fw-semibold fs-6 p-3"
 										id="type" th:field="*{type}" required />
 								</div>
 
 								<div class="mb-3">
-									<label for="totalTeaCups" class="form-label fw-bold fs-5 text-secondary">Total
-										Cups</label>
-									<input type="number"
+									<label for="totalTeaCups"
+										class="form-label fw-bold fs-5 text-secondary">Total
+										Cups</label> <input type="number"
 										class="form-control bg-white text-dark border-2 border-secondary shadow-sm fw-semibold fs-6 p-3"
 										id="totalTeaCups" th:field="*{totalTeaCups}" required min="1" step="1" />
 								</div>
 
 
 								<div class="mb-3">
-									<label for="shippingTime" class="form-label fw-bold fs-5 text-secondary">Shipping
+									<label for="shippingTime"
+										class="form-label fw-bold fs-5 text-secondary">Shipping
 										Time</label> <select
 										class="form-select bg-white text-dark border-2 border-secondary shadow-sm fw-semibold fs-6 p-3"
 										id="shippingTime" name="ship" th:field="*{ship}" required>
@@ -180,8 +206,9 @@
 
 
 								<div class="d-flex justify-content-center mt-3">
-									<button type="submit" class="btn btn-primary fw-bold px-4 py-2 fs-5 shadow">Add Tea
-										Cups</button>
+									<button type="submit"
+										class="btn btn-primary fw-bold px-4 py-2 fs-5 shadow">Add
+										Tea Cups</button>
 								</div>
 							</form>
 						</div>
@@ -190,11 +217,14 @@
 					<!-- Tea Statistics Section (Right Side) -->
 					<div class="col-sm-12 col-xl-6">
 						<div class="bg-white text-dark rounded-4 shadow-lg p-4 card-hover">
-							
-							<h6 class="mb-4 text-dark fw-bold fs-3 text-center">Tea Statistics</h6>
 
-							<div class="table-responsive" style="height: 387px; overflow-y: auto;">
-								<table class="table text-center align-middle table-bordered table-hover shadow-sm">
+							<h6 class="mb-4 text-dark fw-bold fs-3 text-center">Tea
+								Statistics</h6>
+
+							<div class="table-responsive"
+								style="height: 387px; overflow-y: auto;">
+								<table
+									class="table text-center align-middle table-bordered table-hover shadow-sm">
 									<thead class="bg-secondary text-white">
 										<tr class="text-white">
 											<th scope="col" class="fw-bold fs-5">Type</th>
@@ -204,7 +234,8 @@
 										</tr>
 									</thead>
 									<tbody>
-										<tr th:each="t : ${allTeas}" class="fw-semibold fs-6 text-dark">
+										<tr th:each="t : ${allTeas}"
+											class="fw-semibold fs-6 text-dark">
 											<td th:text="${t.type}" class="p-3"></td>
 											<td th:text="${t.date}" class="p-3"></td>
 											<td th:text="${t.totalTeaCups}" class="p-3"></td>
@@ -247,12 +278,14 @@
 
 			</script>
 			<!-- Back to Top -->
-			<a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+			<a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i
+				class="bi bi-arrow-up"></i></a>
 		</div>
 
 		<!-- JavaScript Libraries -->
 		<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
 		<script src="lib/chart/chart.min.js"></script>
 		<script src="lib/easing/easing.min.js"></script>
 		<script src="lib/waypoints/waypoints.min.js"></script>

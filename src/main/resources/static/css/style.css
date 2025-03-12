@@ -241,6 +241,38 @@
     box-shadow: 0 0 5px 2px var(--primary) !important;
 }
 
+/* Log Out */
+
+.logout-btn-container {
+    position: absolute;
+    bottom: 20px; /* Keeps space from the bottom */
+    left: 50%;
+    transform: translateX(-50%); /* Center align */
+    width: 90%; /* Adjust width */
+}
+
+.logout-btn {
+    background: #EB1616; /* Theme red */
+    color: white !important;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px; /* Space between icon & text */
+    transition: all 0.3s ease;
+    width: 100%; /* Full width */
+    padding: 10px 20px;
+    text-align: center;
+}
+
+.logout-btn:hover {
+    background: var(--red);
+    box-shadow: 0px 0px 10px 3px rgba(184, 11, 11, 0.5);
+}
+
+
+
+
 
 /*** Date Picker ***/
 .bootstrap-datetimepicker-widget.bottom {
